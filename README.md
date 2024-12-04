@@ -10,6 +10,7 @@ Node js
 
 step 1: open terminal and iniate a directory as an empty local rep
 run on terminal:
+
 **git init**
 
 **git clone https://github.com/Leonowki/ITE-18_Final_Project_VirtualMap.git**
@@ -19,10 +20,13 @@ step 2: cd to project
 **cd ITE-18-VirtualMap**
 
 step 3: install dependencies
+
 **npm install**
+
 **npm install --save three**
 
 to run:
+
 **npx vite**
 
 
