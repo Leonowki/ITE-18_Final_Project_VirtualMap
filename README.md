@@ -8,7 +8,7 @@ Node js
 
 ## Steps to Get the Repository Locally and Work on It
 
-step 1: open terminal and iniate a directory as an empty local rep
+### Step 1: Initialize a Local Repository and Clone
 run on terminal:
 
 **git init**
