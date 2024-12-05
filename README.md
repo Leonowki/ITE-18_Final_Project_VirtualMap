@@ -25,6 +25,8 @@ step 3: install dependencies
 
 **npm install --save three**
 
+**npm install --save-dev vite**
+
 to run:
 
 **npx vite**
