@@ -9,6 +9,7 @@ export class SceneSetup {
         this.controls = this.createControls();
         this.addHelpers();
         this.addLighting();
+        this.floorMap();
     }
 
     createCamera() {
@@ -39,9 +40,24 @@ export class SceneSetup {
         controls.dampingFactor = 0.1;
         return controls;
     }
+
+    //floor
+    floorMap(){
+        const floorGeometry = new THREE.BoxGeometry(500,1,500);
+        const floorMaterial = new THREE.MeshBasicMaterial({
+            color:0x157104,
+        });
+
+
+        const floor = new THREE.Mesh(floorGeometry,floorMaterial);
+        floor.position.y = -1;
+        this.scene.add(floor);
+
+    }
+
     //removable after
     addHelpers() {
-        const gridHelper = new THREE.GridHelper(500, 20);
+        const gridHelper = new THREE.GridHelper(500, 100);
         const axisHelper = new THREE.AxesHelper(100);
         this.scene.add(gridHelper, axisHelper);
     }
