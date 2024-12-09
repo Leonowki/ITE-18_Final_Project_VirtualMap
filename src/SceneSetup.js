@@ -3,6 +3,7 @@ import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.152.0/exampl
 
 export class SceneSetup {
     constructor() {
+        //add things here to webGL
         this.scene = new THREE.Scene();
         this.camera = this.createCamera();
         this.renderer = this.createRenderer();
@@ -14,7 +15,7 @@ export class SceneSetup {
 
     createCamera() {
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 20, 50);
+        camera.position.set(0, 500, 50);
         return camera;
     }
 
@@ -43,7 +44,7 @@ export class SceneSetup {
 
     //floor
     floorMap(){
-        const floorGeometry = new THREE.BoxGeometry(500,1,500);
+        const floorGeometry = new THREE.BoxGeometry(1000,1,1000);
         const floorMaterial = new THREE.MeshBasicMaterial({
             color:0x157104,
         });
@@ -57,7 +58,7 @@ export class SceneSetup {
 
     //removable after
     addHelpers() {
-        const gridHelper = new THREE.GridHelper(500, 100);
+        const gridHelper = new THREE.GridHelper(1000, 100);
         const axisHelper = new THREE.AxesHelper(100);
         this.scene.add(gridHelper, axisHelper);
     }
