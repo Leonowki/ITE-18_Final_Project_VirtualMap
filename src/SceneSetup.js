@@ -49,7 +49,7 @@ export class SceneSetup {
 
     //floor
     floorMap(){
-        const floorGeometry = new THREE.BoxGeometry(1000,1,1000);
+        const floorGeometry = new THREE.BoxGeometry(1000,0.9,1000);
         const floorMaterial = new THREE.MeshBasicMaterial({
             color:0x157104,
         });
