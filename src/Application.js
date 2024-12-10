@@ -12,10 +12,10 @@ export class Application {
         this.treesModel = new ModelLoader(this.sceneSetup.scene);
         this.oldAdminBuilding = new ModelLoader(this.sceneSetup.scene);
         this.backAdminBuilding = new ModelLoader(this.sceneSetup.scene);
+        this.oldCasBuilding = new ModelLoader(this.sceneSetup.scene);
         
         this.init();
     }
-    
     init() {
         this.heroBuilding.loadModel('/assets/3d_models/new_admin_building.glb', { x: -120, y: -0.1, z: -60 },{ x: 1.4, y: 1.4, z: 1.4 });
         this.kinaadmanBuilding.loadModel('/assets/3d_models/kinaadman_building.glb',{ x: -120, y: -0.34, z: -250},{ x: 1.2, y: 1.2, z: 1.2 });
@@ -25,8 +25,11 @@ export class Application {
         this.treesModel.loadModel('/assets/3d_models/lowPolyTree.glb',{ x: -150, y: 0, z: 300},{ x: 9, y: 9, z: 9});
         this.oldAdminBuilding.loadModel('assets/3d_models/old_admin_building.glb',{ x: -50, y: 0, z: -120},{ x: 0.6, y: 0.6, z: 0.6 });
         this.backAdminBuilding.loadModel('assets/3d_models/back_admin_building.glb',{ x: -200, y: -0.1, z: -60 },{ x: 0.9, y: 0.9, z:0.9});
+        this.oldCasBuilding.loadModel('assets/3d_models/old_cas_building.glb',{ x: 110, y: 1, z:-292 },{ x: 1.5, y: 1.5, z:1.5},{ x: 0, y:Math.PI/(-2), z:0 });
         this.animate();
     }
+
+    
 
     animate() {
         requestAnimationFrame(() => this.animate());

@@ -14,7 +14,7 @@ export class SceneSetup {
         this.addHelpers();
         this.addLighting();
         this.floorMap();
-        this.addSky()
+        this.addSky();
 
     }
 
@@ -73,7 +73,7 @@ export class SceneSetup {
         sky.scale.setScalar(450000);
         
     
-        // Position the sun at noon (directly overhead)
+
         const phi = MathUtils.degToRad(80); // 0 degrees from zenith for direct overhead
         const theta = MathUtils.degToRad(0);    // 0 degrees from north, arbitrary as sun is overhead
         const sunPosition = new Vector3().setFromSphericalCoords(1, phi, theta);
