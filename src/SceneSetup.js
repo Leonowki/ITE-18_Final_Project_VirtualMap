@@ -88,9 +88,8 @@ export class SceneSetup {
         sky.material.uniforms.mieDirectionalG.value = -1;  // Adjust sharpness of the sun's glare
 
         // Adjust renderer exposure for brightness
-        this.renderer.toneMappingExposure = 0; // Increase for brighter appearance (default is 1)
+        this.renderer.toneMappingExposure = 0; // Increase for brighter appearance 
     
-        // Add the sky to the scene
         this.scene.add(sky);
     }
 
