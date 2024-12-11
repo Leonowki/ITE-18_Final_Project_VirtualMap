@@ -1,8 +1,6 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/controls/OrbitControls.js';
+import { MapControls } from 'https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/controls/MapControls.js';
 import { MathUtils, Vector3 } from 'three';
-import { Sky } from 'three/addons/objects/Sky.js';
-
 
 export class SceneSetup {
     constructor() {
@@ -16,11 +14,11 @@ export class SceneSetup {
         this.floorMap();
         this.addSky();
 
-    }
+    } 
 
     createCamera() {
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 500, 50);
+        camera.position.set(0, 100, 300);
         return camera;
     }
 
@@ -39,14 +37,20 @@ export class SceneSetup {
     }
 
     createControls() {
-        const controls = new OrbitControls(this.camera, this.renderer.domElement);
+        const controls = new MapControls(this.camera, this.renderer.domElement);
         controls.enablePan = true;
         controls.panSpeed = 1.5;
         controls.enableDamping = true;
         controls.dampingFactor = 0.1;
+        controls.screenSpacePanning = false; 
+    
+        
+        controls.addEventListener('change', () => {
+            this.camera.position.y = 100; // Fixed y position
+        });
+    
         return controls;
     }
-
     //floor
     floorMap(){
         const floorGeometry = new THREE.BoxGeometry(1000,0.9,1000);
@@ -69,28 +73,9 @@ export class SceneSetup {
     }
     //sky
     addSky(){
-        const sky = new Sky();
-        sky.scale.setScalar(450000);
-        
-    
+        this.bgColor = 0xE2FEDD;
+        this.scene.background = new THREE.Color(this.bgColor);
 
-        const phi = MathUtils.degToRad(80); // 0 degrees from zenith for direct overhead
-        const theta = MathUtils.degToRad(0);    // 0 degrees from north, arbitrary as sun is overhead
-        const sunPosition = new Vector3().setFromSphericalCoords(1, phi, theta);
-    
-        // Apply the sun position to the sky's shader material
-        sky.material.uniforms.sunPosition.value.copy(sunPosition);
-
-        // Adjust atmospheric settings
-        sky.material.uniforms.turbidity.value = 0; // Lower for clear sky
-        sky.material.uniforms.rayleigh.value = 0.7;  // Higher for more blue scattering
-        sky.material.uniforms.mieCoefficient.value = 0.005; // Lower for less hazy sun
-        sky.material.uniforms.mieDirectionalG.value = -1;  // Adjust sharpness of the sun's glare
-
-        // Adjust renderer exposure for brightness
-        this.renderer.toneMappingExposure = 0; // Increase for brighter appearance 
-    
-        this.scene.add(sky);
     }
 
     addLighting() {
