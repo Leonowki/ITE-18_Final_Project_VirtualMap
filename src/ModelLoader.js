@@ -17,13 +17,13 @@ export class ModelLoader {
                 model.rotation.set(rotate.x, rotate.y, rotate.z);
                 model.scale.set(scale.x, scale.y, scale.z);
     
-                // Optional: Ensure child meshes also inherit scaling
-                model.traverse((child) => {
-                    if (child.isMesh) {
-                        child.castShadow = true; // Optional: Shadow configuration
-                        child.receiveShadow = true; // Optional: Shadow configuration
-                    }
-                });
+                // // Optional: Ensure child meshes also inherit scaling
+                // model.traverse((child) => {
+                //     if (child.isMesh) {
+                //         child.castShadow = true; // Optional: Shadow configuration
+                //         child.receiveShadow = true; // Optional: Shadow configuration
+                //     }
+                // });
     
                 this.scene.add(model);
                 console.log('Model loaded:', model);

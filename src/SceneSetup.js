@@ -1,15 +1,13 @@
 import * as THREE from 'three';
 import { MapControls } from 'https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/controls/MapControls.js';
-import { MathUtils, Vector3 } from 'three';
 
 export class SceneSetup {
     constructor() {
-        //add things here to webGL
         this.scene = new THREE.Scene();
         this.camera = this.createCamera();
         this.renderer = this.createRenderer();
         this.controls = this.createControls();
-        this.addHelpers();
+        // this.addHelpers();
         this.addLighting();
         this.floorMap();
         this.addSky();
@@ -18,7 +16,8 @@ export class SceneSetup {
 
     createCamera() {
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-        camera.position.set(0, 100, 300);
+        camera.position.set(-240, 50, -60);
+        // camera.position.set(0, 200, 0);
         return camera;
     }
 
@@ -38,26 +37,34 @@ export class SceneSetup {
 
     createControls() {
         const controls = new MapControls(this.camera, this.renderer.domElement);
+        const minZ = -60;
+        const maxZ = 60;
+        const maxX =240;
+        const minX = -240;
         controls.enablePan = true;
         controls.panSpeed = 1.5;
         controls.enableDamping = true;
         controls.dampingFactor = 0.1;
         controls.screenSpacePanning = false; 
     
-        
         controls.addEventListener('change', () => {
-            this.camera.position.y = 100; // Fixed y position
+            this.camera.position.y = 50;
+            // this.camera.position.z = THREE.MathUtils.clamp(camera.position.z,minZ,maxZ);
+            // this.camera.position.x = THREE.MathUtils.clamp(camera.position.x, minX, maxX);
         });
     
         return controls;
     }
     //floor
     floorMap(){
-        const floorGeometry = new THREE.BoxGeometry(1000,0.9,1000);
-        const floorMaterial = new THREE.MeshBasicMaterial({
-            color:0x157104,
-        });
+        const floorTexture = new THREE.TextureLoader().load('/assets/Images/csu-enhanced.png');
+        const floorGeometry = new THREE.BoxGeometry(400,0.9,217);
+        const floorMaterial = new THREE.MeshStandardMaterial({
+            map:floorTexture,
+            roughness:0.8,
+            metalness:0.1,
 
+        });
 
         const floor = new THREE.Mesh(floorGeometry,floorMaterial);
         floor.position.y = -1;
@@ -66,11 +73,11 @@ export class SceneSetup {
     }
 
     //removable after
-    addHelpers() {
-        const gridHelper = new THREE.GridHelper(1000, 100);
-        const axisHelper = new THREE.AxesHelper(100);
-        this.scene.add(gridHelper, axisHelper);
-    }
+    // addHelpers() {
+    //     const gridHelper = new THREE.GridHelper(400, 50);
+    //     const axisHelper = new THREE.AxesHelper(100);
+    //     this.scene.add(gridHelper, axisHelper);
+    // }
     //sky
     addSky(){
         this.bgColor = 0xE2FEDD;
@@ -80,7 +87,7 @@ export class SceneSetup {
 
     addLighting() {
         // Add ambient light
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
         this.scene.add(ambientLight);
 
         //directional lights
@@ -124,8 +131,10 @@ export class SceneSetup {
     
         console.log('Lighting and helpers added');
     }
+    
 
     render() {
         this.renderer.render(this.scene, this.camera);
+        
     }
 }
