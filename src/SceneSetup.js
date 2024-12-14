@@ -57,7 +57,7 @@ export class SceneSetup {
     }
     //floor
     floorMap(){
-        const floorTexture = new THREE.TextureLoader().load('/assets/Images/csu-enhanced.png');
+        const floorTexture = new THREE.TextureLoader().load('/assets/floor-map/csu-enhanced.png');
         const floorGeometry = new THREE.BoxGeometry(400,0.9,217);
         const floorMaterial = new THREE.MeshStandardMaterial({
             map:floorTexture,
@@ -72,12 +72,12 @@ export class SceneSetup {
 
     }
 
-    //removable after
-    // addHelpers() {
-    //     const gridHelper = new THREE.GridHelper(400, 50);
-    //     const axisHelper = new THREE.AxesHelper(100);
-    //     this.scene.add(gridHelper, axisHelper);
-    // }
+    // removable after
+    addHelpers() {
+        const gridHelper = new THREE.GridHelper(400, 50);
+        const axisHelper = new THREE.AxesHelper(100);
+        this.scene.add(gridHelper, axisHelper);
+    }
     //sky
     addSky(){
         this.bgColor = 0xE2FEDD;

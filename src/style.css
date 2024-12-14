@@ -9,8 +9,49 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
+/**/
+#info-overlay {
+  user-select: none;/* disable user select*/
+  position: absolute;
+  text-align: center;
+  background-color: rgba(21, 113, 4, 0.9);;
+  opacity: 0.9;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  z-index: 100;
 
+}
+#controls {
+  user-select: none;
+  position: absolute;
+  font-size: 10px;
+  top: 560px;
+  width: 100%;
+  text-align: left;
+  z-index: 100;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: right;
+  color: white;
+}
 
+#controls div {
+  display: flex; 
+  align-items: center; 
+  flex: 0 0 auto; 
+  background-color: rgba(21, 113, 4, 0.9); 
+  padding: 5px 10px; 
+  border-radius: 5px; /* Rounded corners */
+  margin: 0 5px; /* Add spacing between the divs */
+}
+
+#controls img {
+  width: 20px; /* Set image width */
+  height: 20px; /* Set image height */
+  margin-left: 5px; /* Space between text and image */
+}
 
 canvas {
   display: block; 

@@ -4,15 +4,39 @@
         <link rel="stylesheet" href="src/styles.css" />
     </head>
     <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
-    <script type="importmap">
+        <!-- Text Information Overlay -->
+        <div id="info-overlay">
+            <h1>CSU 2.5D Virtual Map</h1>
+            <!-- <p>Welcome to the interactive 2.5D map of CSU. Use your mouse to navigate and explore different college buildings. Click on buildings for more information!</p> -->
+        </div>
+            
+        <div id="controls">
+            <div>
+                <p>Left click to move around</p>
+                <img src="public/assets/icon/left-click.png" alt="left-click">
+            </div>
+            <div>
+                <p> Right click to zoom in/out</p>
+                <img src="public/assets/icon/right-click.png" alt="right-click">
+            </div>
+            <div>
+                <p> Click buildings for more information</p>
+                <img src="public/assets/icon/right-click-of-the-mouse.png" alt="click-click">
+            </div>
+        </div>
+
+        <!-- WebGL and Three.js Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+        <script type="importmap">
         {
             "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/"
+                "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/"
             }
         }
-    </script>
-    <script type="module" src="src/main.js"></script>
+        </script>
+        <script type="module" src="src/main.js"></script>
+
+
     </body>
 </html>
