@@ -20,6 +20,7 @@ export class Application {
         this.oldAdminBuilding = new ModelLoader(this.sceneSetup.scene);
         this.backAdminBuilding = new ModelLoader(this.sceneSetup.scene);
         this.oldCasBuilding = new ModelLoader(this.sceneSetup.scene);
+        this.hirayaBuilding = new ModelLoader(this.sceneSetup.scene);
         //text interactable
         this.textMeshes = [];
         this.raycaster = new Raycaster();
@@ -42,17 +43,19 @@ export class Application {
         this.csuOval.loadModel('/assets/3d_models/csu_oval.glb',{ x: 30, y: -1, z: 0},{ x: 0.22, y: 0.22, z: 0.22},{ x: 0, y:Math.PI/2, z: 0 });
         this.addText("CSU's Oval",{ x: -30, y: 10, z: 25},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.hinangBuilding.loadModel('/assets/3d_models/hinang_building.glb',{ x: 93, y: -1, z: -25},{ x: 0.5, y: 0.5, z: 0.5 },{ x: 0, y:Math.PI/(-2), z: 0 });
-        this.addText("Hinang Building",{ x: 80, y: 12, z: -25},{ x: Math.PI/-2.8, y: 0, z: 0 });
+        this.addText("Hinang Building",{ x: 80, y: 12, z: -30},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.oldAdminBuilding.loadModel('assets/3d_models/old_admin_building.glb',{ x: -30, y: -0.6, z: -13},{ x: 0.27, y: 0.27, z: 0.27},{ x: 0, y:Math.PI/(-2), z: 0 });
         this.addText("Old Admin Building",{ x: -30, y: 10, z: -25},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.backAdminBuilding.loadModel('assets/3d_models/back_admin_building.glb',{ x: -57, y: 0, z: -78 },{ x: 0.35, y: 0.35, z:0.35},{ x: 0, y:Math.PI/(-2), z: 0 });
         this.addText("Back Admin Building",{ x: -70, y: 10, z: -78 },{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.oldCasBuilding.loadModel('assets/3d_models/old_cas_building.glb',{ x: 40, y: -1, z:32 },{ x: 0.63, y: 0.63, z:0.63},{ x: 0, y:Math.PI, z:0 });
         this.addText("Old Cas Building",{ x: 40, y: 10, z:32 },{ x: Math.PI/-2.8, y: 0, z: 0 });
+        this.hirayaBuilding.loadModel('/assets/3d_models/hiraya_building.glb',{ x: 65, y: -1, z: -27},{ x: 0.5, y: 0.44, z: 0.44},{ x: 0, y: Math.PI/-2, z: 0});
+        this.addText("Hiraya Building",{ x: 63, y: 10, z: -32},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.animate();
     }
 
-    addText(text, position,rotate) {
+    addText(text, position) {
         this.fontLoader.load('assets/font/Roboto Condensed_Regular.json', (font) =>{
             const textGeometry = new TextGeometry(text, {
                 font: font,
@@ -65,7 +68,6 @@ export class Application {
             const textMaterial = new MeshBasicMaterial({ color: 0xffffff }); 
             const textMesh = new Mesh(textGeometry, textMaterial);
             textMesh.position.set(position.x, position.y, position.z);
-            textMesh.rotation.set(rotate.x,rotate.y,rotate.z);
             textMesh.name = text
             this.sceneSetup.scene.add(textMesh); 
             this.textMeshes.push(textMesh);
@@ -121,7 +123,20 @@ export class Application {
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
             nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-            mollit anim id est laborum.`;
+            mollit anim id est laborum. "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
+            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae 
+            vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
+            consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia 
+            dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam 
+            aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, 
+            nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil 
+            molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?At vero eos et accusamus et iusto odio 
+            dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi 
+            sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. 
+            Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit 
+            quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et 
+            aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum 
+            rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat`;
 
             // Show the info panel
             infoPanel.classList.remove('hidden');
