@@ -31,7 +31,7 @@ export class Application {
     //param(model,scale,rotate) for models
     
     init() {
-        this.fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json');
+        this.fontLoader.load('/assets/font/Roboto Condensed_Regular.json');
         //models
         this.heroBuilding.loadModel('/assets/3d_models/new_admin_building.glb', { x: -49, y: -1, z: -45 },{ x: 0.45, y: 0.45, z: 0.45},{ x: 0, y: Math.PI/(-1.8), z: 0 });
         this.addText("Hero Building",{ x: -57, y: 10, z: -45 },{ x: Math.PI/-2.8, y: 0, z: 0 });
@@ -53,11 +53,11 @@ export class Application {
     }
 
     addText(text, position,rotate) {
-        this.fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) =>{
+        this.fontLoader.load('assets/font/Roboto Condensed_Regular.json', (font) =>{
             const textGeometry = new TextGeometry(text, {
                 font: font,
-                size: 2,        
-                depth: 0.1,    
+                size: 1.5,        
+                depth:1,    
                 curveSegments: 12,
                 bevelEnabled: false,              
             });
@@ -137,8 +137,13 @@ export class Application {
         
     animate() {
         requestAnimationFrame(() => this.animate());
+    
+        // Make all text meshes face the camera
+        this.textMeshes.forEach((textMesh) => {
+            textMesh.lookAt(this.sceneSetup.camera.position);
+        });
         this.sceneSetup.controls.update();
-        this.sceneSetup.render();
+        this.sceneSetup.render();   
         
     }
 }
