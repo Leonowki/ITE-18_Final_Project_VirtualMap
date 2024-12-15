@@ -28,7 +28,7 @@ export class SceneSetup {
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(window.devicePixelRatio);
         document.body.appendChild(renderer.domElement);
-        window.addEventListener('resize', () => {
+        window.addEventListener('resize', ()=>{
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
     
@@ -46,7 +46,6 @@ export class SceneSetup {
         controls.enableDamping = true;
         controls.dampingFactor = 0.1;
         controls.screenSpacePanning = false; 
-    
         controls.addEventListener('change', () => {
             this.camera.position.y = 50;
             // this.camera.position.z = THREE.MathUtils.clamp(camera.position.z,minZ,maxZ);

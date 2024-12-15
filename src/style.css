@@ -29,11 +29,10 @@ html, body {
   font-size: 10px;
   top: 560px;
   width: 100%;
-  text-align: left;
   z-index: 100;
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: right;
+  justify-content: left;
   color: white;
 }
 
@@ -51,6 +50,28 @@ html, body {
   width: 20px; /* Set image width */
   height: 20px; /* Set image height */
   margin-left: 5px; /* Space between text and image */
+}
+
+#building-info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  display: none; /* Hidden by default */
+  z-index: 1000;
+}
+
+#building-info h2 {
+  margin-top: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 canvas {
