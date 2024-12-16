@@ -36,35 +36,63 @@ html, body {
   box-sizing: border-box;
 
 }
-#controls {
-  /* position: absolute; */
-  user-select: none;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 10px;
-  top: 560px;
-  width: 100%;
-  z-index: 100;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: left;
-  color: white;
-}
 
-#controls div {
-  display: flex; 
-  align-items: center; 
-  flex: 0 0 auto; 
-  background-color: rgba(21, 113, 4, 0.9); 
-  padding: 5px 10px; 
-  border-radius: 5px; /* Rounded corners */
-  margin: 0 5px; /* Add spacing between the divs */
-}
-
-#controls img {
-  width: 20px; 
-  height: 20px; 
-  margin-left: 5px; 
-}
+  #controls {
+    user-select: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    top: 560px;
+    width: 100%;
+    z-index: 100;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: left;
+    color: white;
+  }
+  
+  #controls div {
+    display: flex;
+    align-items: center;
+    flex: 0 1 auto; /* Flexibly resize items but prevent shrinking too much */
+    background-color: rgba(21, 113, 4, 0.9);
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded corners */
+    margin: 0; /* No external margin to avoid wrapping issues */
+  }
+  
+  #controls img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    #controls {
+      font-size: 8px; /* Smaller font size on smaller screens */
+      justify-content: center; /* Center items on smaller screens */
+    }
+  
+    #controls div {
+      padding: 3px 7px; /* Adjust padding to fit smaller screens */
+    }
+  
+    #controls img {
+      width: 16px; /* Smaller icon size */
+      height: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #controls {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items in column layout */
+    }
+  
+    #controls div {
+      width: 90%; /* Allow divs to fill most of the screen width */
+      justify-content: center;
+    }
+  }
 
 /*loading screen*/
 .loading-wrapper {
@@ -163,8 +191,6 @@ html, body {
 }
 
 /*%loading screen%*/
-
-
 
 #building-info {
   position: fixed;
