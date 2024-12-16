@@ -56,7 +56,7 @@ export class SceneSetup {
     }
     //floor
     floorMap(){
-        const floorTexture = new THREE.TextureLoader().load('/assets/floor-map/csu-enhanced.png');
+        const floorTexture = new THREE.TextureLoader().load('/assets/floor-map/csu-enhanced.webp');
         const floorGeometry = new THREE.BoxGeometry(400,0.9,217);
         const floorMaterial = new THREE.MeshStandardMaterial({
             map:floorTexture,
