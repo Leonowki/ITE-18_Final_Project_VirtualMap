@@ -46,11 +46,11 @@ export class SceneSetup {
         controls.enableDamping = true;
         controls.dampingFactor = 0.1;
         controls.screenSpacePanning = false; 
-        // controls.addEventListener('change', () => {
-        //     this.camera.position.y = 50;
-        //     // this.camera.position.z = THREE.MathUtils.clamp(camera.position.z,minZ,maxZ);
-        //     // this.camera.position.x = THREE.MathUtils.clamp(camera.position.x, minX, maxX);
-        // });
+        controls.addEventListener('change', () => {
+            this.camera.position.y = 50;
+            // this.camera.position.z = THREE.MathUtils.clamp(camera.position.z,minZ,maxZ);
+            // this.camera.position.x = THREE.MathUtils.clamp(camera.position.x, minX, maxX);
+        });
     
         return controls;
     }

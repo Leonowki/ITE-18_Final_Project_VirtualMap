@@ -1,7 +1,10 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>CSU 2.5D Virtual Map</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="src/styles.css" />
+        <title>CSU 2.5D Virtual Map</title>
     </head>
     <body>
         <!-- Text Information Overlay -->
@@ -9,6 +12,20 @@
             <h1>CSU 2.5D Virtual Map</h1>
             <!-- <p>Welcome to the interactive 2.5D map of CSU. Use your mouse to navigate and explore different college buildings. Click on buildings for more information!</p> -->
         </div>
+        <!---loading screen-->
+        <div class="loading-wrapper" id="loading-screen">
+            <div class="loading-container">
+                <div class="circle">
+                    <div class="cut">
+                        <div class="circle-2"></div>
+                    </div>
+                </div>
+                <div class="loading-text">
+                    <h2>Loading Map..</h2>
+                </div>
+            </div>
+        </div>
+        <!---loading screen-->
             
         <div id="controls">
             <div>
@@ -30,7 +47,6 @@
             <h2 id="building-title">Building Name here</h2>
             <p id="building-description">Details here</p>
         </div>
-
         <!-- WebGL and Three.js Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
         <script type="importmap">
@@ -41,7 +57,7 @@
             }
         }
         </script>
-        <script type="module" src="src/main.js"></script>
+        <script type="module" src="src/main.js" defer></script>
 
 
     </body>

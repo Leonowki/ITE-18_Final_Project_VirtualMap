@@ -6,6 +6,7 @@ import { MeshBasicMaterial, Mesh,Raycaster,Vector2,Color } from 'three';
 
 export class Application {
     constructor() {
+        
         //font
         this.fontLoader = new FontLoader();
         //scene
@@ -32,6 +33,17 @@ export class Application {
     //param(model,scale,rotate) for models
     
     init() {
+        //loading screen
+        const loadingScreen = document.getElementById('loading-screen');
+        const headTitle = document.getElementById('info-overlay');
+        const controls = document.getElementById('controls');
+        setTimeout(() => {
+            headTitle.style.position = 'absolute';
+            controls.style.position = 'absolute';
+            loadingScreen.style.display = 'none';
+            
+        }, 3000);        
+
         this.fontLoader.load('/assets/font/Roboto Condensed_Regular.json');
         //models
         this.heroBuilding.loadModel('/assets/3d_models/new_admin_building.glb', { x: -49, y: -1, z: -45 },{ x: 0.45, y: 0.45, z: 0.45},{ x: 0, y: Math.PI/(-1.8), z: 0 });
