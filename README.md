@@ -38,6 +38,6 @@ npm install --save-dev vite
 ```
 to run:
 ```bash
-**npx vite**
+npx vite
 ```
 
