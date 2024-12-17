@@ -20,7 +20,7 @@ git clone https://github.com/Leonowki/ITE-18_Final_Project_VirtualMap.git
 
 
 
-step 2: cd to project
+### Step 2: cd to project
 
 ```bash
 
@@ -28,13 +28,23 @@ cd ITE-18-VirtualMap
 ```
 
 
-step 3: install dependencies
+### Step 3: Install dependencies
+
+1. Download and install Git LFS from [https://git-lfs.com/]
+2. After installation, run the following command to initialize Git LFS:
+
 ```bash
+git lfs install
+
+-----------------
+
 npm install
 
 npm install --save three
 
 npm install --save-dev vite
+
+
 ```
 to run:
 ```bash
