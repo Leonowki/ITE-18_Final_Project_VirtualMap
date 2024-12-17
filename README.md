@@ -13,10 +13,12 @@ run on terminal:
 ```bash
 
 git init
+
+git clone https://github.com/Leonowki/ITE-18_Final_Project_VirtualMap.git
 ```
 
 
-**git clone https://github.com/Leonowki/ITE-18_Final_Project_VirtualMap.git**
+
 
 step 2: cd to project
 
