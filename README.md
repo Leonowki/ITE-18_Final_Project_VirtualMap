@@ -10,25 +10,34 @@ Node js
 
 ### Step 1: Initialize a Local Repository and Clone
 run on terminal:
+```bash
 
-**git init**
+git init
 
-**git clone https://github.com/Leonowki/ITE-18_Final_Project_VirtualMap.git**
+git clone https://github.com/Leonowki/ITE-18_Final_Project_VirtualMap.git
+```
+
+
+
 
 step 2: cd to project
 
-**cd ITE-18-VirtualMap**
+```bash
+
+cd ITE-18-VirtualMap
+```
+
 
 step 3: install dependencies
+```bash
+npm install
 
-**npm install**
+npm install --save three
 
-**npm install --save three**
-
-**npm install --save-dev vite**
-
+npm install --save-dev vite
+```
 to run:
-
-**npx vite**
-
+```bash
+npx vite
+```
 
