@@ -41,21 +41,20 @@ export class Application {
         setTimeout(() => {
             headTitle.style.position = 'absolute';
             controls.style.position = 'absolute';
-            loadingScreen.style.display = 'none';
-            
+            loadingScreen.style.display = 'none';            
         }, 3000);        
 
         this.fontLoader.load('/assets/font/Roboto Condensed_Regular.json');
         //models
-        this.heroBuilding.loadModel('/assets/3d_models/new_admin_building.glb', { x: -49, y: -1, z: -45 },{ x: 0.45, y: 0.45, z: 0.45},{ x: 0, y: Math.PI/(-1.8), z: 0 });
+        this.heroBuilding.loadModel('/assets/3d_models/new_admin_building.glb', { x: -50, y: -0.7, z: -45 },{ x: 0.45, y: 0.45, z: 0.45},{ x: 0, y: Math.PI/(-2), z: 0 });
         this.addText("Hero Building",{ x: -57, y: 10, z: -45 },{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.kinaadmanBuilding.loadModel('/assets/3d_models/kinaadman_building.glb',{ x: 23, y: -1, z: -50},{ x: 0.45, y: 0.45, z: 0.45 },{ x: 0, y: Math.PI/(-2), z: 0 });
         this.addText("Kinaadman Building",{ x: 13, y: 10, z: -50},{ x: Math.PI/-2.8, y: 0, z: 0 });
-        this.libraryBuilding.loadModel('/assets/3d_models/library_building.glb',{ x: -100, y: -0.5, z: 25 },{ x: 0.15, y: 0.15, z: 0.15 },{ x: 0, y: Math.PI/4, z: 0 });
+        this.libraryBuilding.loadModel('/assets/3d_models/library_building.glb',{ x: -100, y: -0.4, z: 25 },{ x: 0.15, y: 0.15, z: 0.15 },{ x: 0, y: Math.PI/4, z: 0 });
         this.addText("Library Building",{ x: -110, y: 10, z: 25 },{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.csuOval.loadModel('/assets/3d_models/csu_oval.glb',{ x: 30, y: -1, z: 0},{ x: 0.22, y: 0.22, z: 0.22},{ x: 0, y:Math.PI/2, z: 0 });
         this.addText("CSU's Oval",{ x: -30, y: 10, z: 25},{ x: Math.PI/-2.8, y: 0, z: 0 });
-        this.hinangBuilding.loadModel('/assets/3d_models/hinang_building.glb',{ x: 93, y: -1, z: -25},{ x: 0.5, y: 0.5, z: 0.5 },{ x: 0, y:Math.PI/(-2), z: 0 });
+        this.hinangBuilding.loadModel('/assets/3d_models/hinang_building.glb',{ x: 93, y: -1, z: -25},{ x: 0.6, y: 0.5, z: 0.5 },{ x: 0, y:Math.PI/(-2), z: 0 });
         this.addText("Hinang Building",{ x: 80, y: 12, z: -30},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.oldAdminBuilding.loadModel('assets/3d_models/old_admin_building.glb',{ x: -30, y: -0.6, z: -13},{ x: 0.27, y: 0.27, z: 0.27},{ x: 0, y:Math.PI/(-2), z: 0 });
         this.addText("Old Admin Building",{ x: -30, y: 10, z: -25},{ x: Math.PI/-2.8, y: 0, z: 0 });
@@ -63,9 +62,9 @@ export class Application {
         this.addText("Back Admin Building",{ x: -70, y: 10, z: -78 },{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.oldCasBuilding.loadModel('assets/3d_models/old_cas_building.glb',{ x: 40, y: -1, z:32 },{ x: 0.63, y: 0.63, z:0.63},{ x: 0, y:Math.PI, z:0 });
         this.addText("Old Cas Building",{ x: 40, y: 10, z:32 },{ x: Math.PI/-2.8, y: 0, z: 0 });
-        this.hirayaBuilding.loadModel('/assets/3d_models/hiraya_building.glb',{ x: 65, y: -1, z: -27},{ x: 0.5, y: 0.44, z: 0.44},{ x: 0, y: Math.PI/-2, z: 0});
+        this.hirayaBuilding.loadModel('/assets/3d_models/hiraya_building.glb',{ x: 65, y: -1, z: -27},{ x: 0.6, y: 0.44, z: 0.44},{ x: 0, y: Math.PI/-2, z: 0});
         this.addText("Hiraya Building",{ x: 63, y: 15, z: -32},{ x: Math.PI/-2.8, y: 0, z: 0 });
-        this.nsbBuilding.loadModel('/assets/3d_models/nsb_building.glb',{ x: -100, y: -1, z: -12},{ x: 0.65, y: 0.65, z: 0.65},{ x: 0, y: Math.PI/-2, z: 0});
+        this.nsbBuilding.loadModel('/assets/3d_models/nsb_building.glb',{ x: -100, y: -0.5, z: -12},{ x: 0.65, y: 0.65, z: 0.65},{ x: 0, y: Math.PI/-2, z: 0});
         this.addText("Batok Building",{ x: -99, y: 10, z: -42},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.animate();
     }

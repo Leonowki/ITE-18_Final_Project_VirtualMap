@@ -22,7 +22,7 @@ export class SceneSetup {
     }
 
     cameraRange(){
-        const minX = -240,maxX = 240;
+        const minX = -230,maxX = 230;
         const minY = 3,maxY = 50;
         const minZ = -120,maxZ = 120;
 
