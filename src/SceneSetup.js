@@ -52,10 +52,11 @@ export class SceneSetup {
     createControls() {
         const controls = new MapControls(this.camera, this.renderer.domElement);
         controls.enablePan = true;
-        controls.panSpeed = 1.5;
+        controls.panSpeed = 1.0;
         controls.enableDamping = true;
-        controls.dampingFactor = 0.1;
-        controls.screenSpacePanning = false; 
+        // controls.enableZoom = false;
+        controls.dampingFactor = 0.09;
+        controls.screenSpacePanning = true; 
 
         return controls;
     }
