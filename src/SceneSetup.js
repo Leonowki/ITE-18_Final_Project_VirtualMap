@@ -21,6 +21,20 @@ export class SceneSetup {
         return camera;
     }
 
+    cameraRange(){
+        const minX = -240,maxX = 240;
+        const minY = 3,maxY = 50;
+        const minZ = -120,maxZ = 120;
+
+        this.camera.position.x = Math.max(minX,Math.min(maxX,this.camera.position.x));
+        this.camera.position.y = Math.max(minY,Math.min(maxY,this.camera.position.y));
+        this.camera.position.z = Math.max(minZ,Math.min(maxZ,this.camera.position.z));
+
+
+
+
+    }
+
     createRenderer() {
         const renderer = new THREE.WebGLRenderer({
             antialias: true,
@@ -37,21 +51,12 @@ export class SceneSetup {
 
     createControls() {
         const controls = new MapControls(this.camera, this.renderer.domElement);
-        const minZ = -60;
-        const maxZ = 60;
-        const maxX =240;
-        const minX = -240;
         controls.enablePan = true;
         controls.panSpeed = 1.5;
         controls.enableDamping = true;
         controls.dampingFactor = 0.1;
         controls.screenSpacePanning = false; 
-        controls.addEventListener('change', () => {
-            this.camera.position.y = 50;
-            // this.camera.position.z = THREE.MathUtils.clamp(camera.position.z,minZ,maxZ);
-            // this.camera.position.x = THREE.MathUtils.clamp(camera.position.x, minX, maxX);
-        });
-    
+
         return controls;
     }
     //floor
@@ -133,6 +138,7 @@ export class SceneSetup {
     
 
     render() {
+        this.cameraRange();
         this.renderer.render(this.scene, this.camera);
         
     }

@@ -2,7 +2,7 @@ import { SceneSetup } from './SceneSetup.js';
 import { ModelLoader } from './ModelLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-import { MeshBasicMaterial, Mesh,Raycaster,Vector2,Color } from 'three';
+import { MeshBasicMaterial, Mesh,Raycaster,Vector2} from 'three';
 
 export class Application {
     constructor() {
@@ -22,6 +22,7 @@ export class Application {
         this.backAdminBuilding = new ModelLoader(this.sceneSetup.scene);
         this.oldCasBuilding = new ModelLoader(this.sceneSetup.scene);
         this.hirayaBuilding = new ModelLoader(this.sceneSetup.scene);
+        this.nsbBuilding = new ModelLoader(this.sceneSetup.scene);
         //text interactable
         this.textMeshes = [];
         this.raycaster = new Raycaster();
@@ -63,7 +64,9 @@ export class Application {
         this.oldCasBuilding.loadModel('assets/3d_models/old_cas_building.glb',{ x: 40, y: -1, z:32 },{ x: 0.63, y: 0.63, z:0.63},{ x: 0, y:Math.PI, z:0 });
         this.addText("Old Cas Building",{ x: 40, y: 10, z:32 },{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.hirayaBuilding.loadModel('/assets/3d_models/hiraya_building.glb',{ x: 65, y: -1, z: -27},{ x: 0.5, y: 0.44, z: 0.44},{ x: 0, y: Math.PI/-2, z: 0});
-        this.addText("Hiraya Building",{ x: 63, y: 10, z: -32},{ x: Math.PI/-2.8, y: 0, z: 0 });
+        this.addText("Hiraya Building",{ x: 63, y: 15, z: -32},{ x: Math.PI/-2.8, y: 0, z: 0 });
+        this.nsbBuilding.loadModel('/assets/3d_models/nsb_building.glb',{ x: -100, y: -1, z: -12},{ x: 0.65, y: 0.65, z: 0.65},{ x: 0, y: Math.PI/-2, z: 0});
+        this.addText("Batok Building",{ x: -99, y: 10, z: -42},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.animate();
     }
 
@@ -174,3 +177,4 @@ export class Application {
         
     }
 }
+
