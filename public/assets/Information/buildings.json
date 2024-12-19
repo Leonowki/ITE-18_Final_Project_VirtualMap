@@ -1,0 +1,12 @@
+{
+    "buildings": {
+        "CAA Building": {
+            "title": "CAA Building | College of Agriculture and Agri-Industries",
+            "description": "The CAA Building is the heart of agriculture education, where future leaders in agriculture will be trained to become key contributors to the Philippine economy. The college offers two primary programs:"
+        },
+        "Building B": {
+            "title": "Building B",
+            "description": "Details about Building B. Known for its eco-friendly design."
+        }
+    }
+}
