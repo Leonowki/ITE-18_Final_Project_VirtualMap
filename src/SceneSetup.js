@@ -17,7 +17,6 @@ export class SceneSetup {
     createCamera() {
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
         camera.position.set(-240, 50, -60);
-        // camera.position.set(0, 200, 0);
         return camera;
     }
 
@@ -29,9 +28,6 @@ export class SceneSetup {
         this.camera.position.x = Math.max(minX,Math.min(maxX,this.camera.position.x));
         this.camera.position.y = Math.max(minY,Math.min(maxY,this.camera.position.y));
         this.camera.position.z = Math.max(minZ,Math.min(maxZ,this.camera.position.z));
-
-
-
 
     }
 
@@ -55,7 +51,7 @@ export class SceneSetup {
         controls.panSpeed = 1.0;
         controls.enableDamping = true;
         // controls.enableZoom = false;
-        controls.dampingFactor = 0.09;
+        controls.dampingFactor = 0.1;
         controls.screenSpacePanning = true; 
 
         return controls;
@@ -77,12 +73,12 @@ export class SceneSetup {
 
     }
 
-    // removable after
-    addHelpers() {
-        const gridHelper = new THREE.GridHelper(400, 50);
-        const axisHelper = new THREE.AxesHelper(100);
-        this.scene.add(gridHelper, axisHelper);
-    }
+    // // removable after
+    // addHelpers() {
+    //     const gridHelper = new THREE.GridHelper(400, 50);
+    //     const axisHelper = new THREE.AxesHelper(100);
+    //     this.scene.add(gridHelper, axisHelper);
+    // }
     //sky
     addSky(){
         this.bgColor = 0xE2FEDD;
@@ -91,7 +87,7 @@ export class SceneSetup {
     }
 
     addLighting() {
-        // Add ambient light
+        // ambient light
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
         this.scene.add(ambientLight);
 
@@ -134,7 +130,7 @@ export class SceneSetup {
         // ambientLightHelper.position.set(0, 10, 0); // Position helper in the scene
         // this.scene.add(ambientLightHelper);
     
-        console.log('Lighting and helpers added');
+        
     }
     
 

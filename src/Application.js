@@ -42,13 +42,13 @@ export class Application {
     init() {
         //loading screen
         const loadingScreen = document.getElementById('loading-screen');
-        const headTitle = document.getElementById('info-overlay');
-        const controls = document.getElementById('controls');
         setTimeout(() => {
-            headTitle.style.position = 'absolute';
-            controls.style.position = 'absolute';
-            loadingScreen.style.display = 'none';            
-        }, 3000);        
+            loadingScreen.classList.add('fade-out'); // Add fade-out class
+            setTimeout(() => {
+                
+                loadingScreen.style.display = 'none'; // Hide the loading screen after animation
+            }, 2000); // Match the animation duration in CSS
+        }, 5000);        
 
         this.fontLoader.load('/assets/font/Roboto Condensed_Regular.json');
         //models
@@ -97,7 +97,7 @@ export class Application {
                 bevelEnabled: false,              
             });
     
-            const textMaterial = new MeshBasicMaterial({ color: 0xffffff }); 
+            const textMaterial = new MeshBasicMaterial({ color: 0xffffff}); 
             const textMesh = new Mesh(textGeometry, textMaterial);
             textMesh.position.set(position.x, position.y, position.z);
             textMesh.name = text
@@ -116,17 +116,17 @@ export class Application {
         this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-        // Perform raycasting
+        
         this.raycaster.setFromCamera(this.mouse, this.sceneSetup.camera);
         const intersects = this.raycaster.intersectObjects(this.textMeshes);
 
-        // Reset all text colors
+        
         this.textMeshes.forEach((mesh) => {
             mesh.material.color.set(0xffffff); // Default color
         });
 
         if (intersects.length > 0) {
-            // Highlight the first intersected text
+            
             intersects[0].object.material.color.set(0x127300); // Hover color
         }
     }
@@ -166,7 +166,7 @@ export class Application {
                         console.warn(`No data found for ${buildingName}`);
                     }
                 })
-                .catch(error => console.error('Error fetching building data:', error));
+                .catch(error => console.error('Error fetching building data:',error));
         }
     }
 
