@@ -1,67 +1,108 @@
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="src/styles.css" />
-        <title>VirtuCSU</title>
-    </head>
-    <body>
-        <!-- Text Information Overlay -->
-        <div id="info-overlay">
-            <div>
-                <h1>VirtuCSU</h1>
-            </div>
-            <!-- <p>Welcome to the interactive 2.5D map of CSU. Use your mouse to navigate and explore different college buildings. Click on buildings for more information!</p> -->
-        </div>
-        <!---loading screen-->
-        <div class="loading-wrapper" id="loading-screen">
-            <div class="loading-container">
-                <div class="circle">
-                    <div class="cut">
-                        <div class="circle-2"></div>
-                    </div>
-                </div>
-                <div class="loading-text">
-                    <h2>Loading Map..</h2>
-                </div>
-                <div id="fun-fact"></div>
-            </div>
-        </div>
-        <!---loading screen-->
-            
-        <div id="controls">
-            <div>
-                <p>Left click to move around</p>
-                <img src="/assets/icon/left-click.webp" alt="left-click">
-            </div>
-            <div>
-                <p> Right click and drag or <br> use scroll to zoom in/out</p>
-                <img src="/assets/icon/right-click.webp" alt="right-click">
-            </div>
-            <div>
-                <p> Click building names for more information</p>
-                <img src="/assets/icon/right-click-of-the-mouse.webp" alt="click-click">
-            </div>
-        </div>
-        <!---hidden info-->
-        <div id="building-info" class="hidden">
-            <button id="close-info" style="float: right;">x</button>
-            <h2 id="building-title">Building Name here</h2>
-            <p id="building-description">Details here</p>
-        </div>
-        <!-- WebGL and Three.js Scripts -->
-        <script type="importmap">
-        {
-            "imports": {
-                "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js",
-                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/"
-            }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirtuCSU</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('/assets/images/mainMenu/caraga-state-university.webp'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
         }
-        </script>
-        <script type="module" src="src/main.js" defer></script>
 
+        #layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #35711D;
+            opacity: 0.6; /* Adjust opacity as needed */
+            z-index: 1; /* Ensures it stays below the content */
+        }
 
-    </body>
+        .head-title {
+            text-align: center;
+            margin-bottom: 10px;
+            z-index: 2;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .virtu-csu {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            z-index: 2;
+        }
+        .disclaimer{
+            margin-top: 100px;
+            background-color: white;
+            color: black;
+            border-radius: 5px;
+            z-index: 2;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            padding: 20px; /* Add padding for a larger box */
+            width: 30%; /* Optional: Adjust the width */
+            margin-left: auto; /* Center horizontally */
+            margin-right: auto;
+            box-shadow: 0px 5px 0px rgb(255, 255, 0); /* Solid yellow shadow */
+
+        }
+
+        button {
+            position: relative; 
+            padding: 10px 20px;
+            background-color: #67AD5B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 2; 
+            box-shadow: 0px 5px 0px rgba(255, 255, 0); /* Add yellow shadow at the bottom */
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="layer"></div>
+    <div class="head-title">
+        <div class="virtu-csu">
+            <h1>VirtuCSU</h1>
+        </div>
+        <div class="description">
+            <p>A FINAL PROJECT FOR ITE 18 - APPLICATIONS DEVELOPMENT AND EMERGING TECHNOLOGIES</p>
+        </div>
+    </div>
+    <div class="main-menu">
+        <button 
+            type="button" 
+            aria-label="Navigate to Virtual Map" 
+            onclick="location.href='virtualmap.html';"
+            >
+            Go to Virtual Map
+        </button>
+    </div>
+    <div class="disclaimer">
+        <h3> Disclaimer</h3>
+        <p>This virtual map is intended solely for academic purposes. It is a part of a student project for the ITE 18 - Applications Development and Emerging Technologies course.  </p>
+    </div>
+</body>
 </html>
