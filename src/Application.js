@@ -28,8 +28,9 @@ export class Application {
         this.hostelBuilding = new ModelLoader(this.sceneSetup.scene);
         this.masawaBuilding = new ModelLoader(this.sceneSetup.scene);
         this.villaresBuilding = new ModelLoader(this.sceneSetup.scene);
+        this.loadingScreen();//handles fade out
+        this.buildingImage();//images in infor
         //text interactable
-        this.loadingScreen();
         this.textMeshes = [];
         this.raycaster = new Raycaster();
         this.mouse = new Vector2();
@@ -130,6 +131,7 @@ export class Application {
             this.textMeshes.push(textMesh);
         });
     }
+
     //interactables
     addEventListers(){
         window.addEventListener('mousemove',event => this.onMouseMove(event));
@@ -170,7 +172,7 @@ export class Application {
             const clickedMesh = intersects[0].object;
             const buildingName = clickedMesh.name; 
     
-            
+            this.buildingImage(buildingName);
             fetch('/assets/Information/buildings.json')
                 .then(response => response.json())
                 .then(data => {
@@ -196,6 +198,25 @@ export class Application {
         }
     }
 
+    buildingImage(buildingName) {
+        const imageGrid = document.getElementById('image-grid');
+        imageGrid.innerHTML = ''; 
+    
+        
+        const imageFolder = `/assets/images/${buildingName}/`;
+        const imageExtensions = ['0.webp', '1.webp', '2.webp', '3.webp'];
+    
+        
+        imageExtensions.forEach((imageFile) => {
+            const imgElement = document.createElement('img');
+            imgElement.src = `${imageFolder}${imageFile}`;
+            imgElement.alt = `${buildingName} Image`;
+            imgElement.onerror = () => {
+                console.warn(`Image not found: ${imageFolder}${imageFile}`);
+            };
+            imageGrid.appendChild(imgElement);
+        });
+    }
     closeInfoPanel() {
         const infoPanel = document.getElementById('building-info');
         infoPanel.classList.add('hidden');
