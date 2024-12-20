@@ -6,7 +6,6 @@ import { MeshBasicMaterial, Mesh,Raycaster,Vector2} from 'three';
 
 export class Application {
     constructor() {
-        
         //font
         this.fontLoader = new FontLoader();
         //scene
@@ -30,6 +29,7 @@ export class Application {
         this.masawaBuilding = new ModelLoader(this.sceneSetup.scene);
         this.villaresBuilding = new ModelLoader(this.sceneSetup.scene);
         //text interactable
+        this.loadingScreen();
         this.textMeshes = [];
         this.raycaster = new Raycaster();
         this.mouse = new Vector2();
@@ -39,16 +39,8 @@ export class Application {
 
     //param(model,scale,rotate) for models
     init() {
-        //loading screen
-        const loadingScreen = document.getElementById('loading-screen');
-        setTimeout(() => {
-            loadingScreen.classList.add('fade-out'); // Add fade-out class
-            setTimeout(() => {
-                
-                loadingScreen.style.display = 'none'; 
-            }, 2000); 
-        }, 5000);        
 
+        
         this.fontLoader.load('/assets/font/Roboto Condensed_Regular.json');
         //models
         this.heroBuilding.loadModel('/assets/3d_models/new_admin_building.glb', { x: -50, y: -0.7, z: -45 },{ x: 0.45, y: 0.45, z: 0.45},{ x: 0, y: Math.PI/(-2), z: 0 });
@@ -84,6 +76,40 @@ export class Application {
         this.addText("Villares Building",{ x: 196, y: 5, z: 17},{ x: Math.PI/-2.8, y: 0, z: 0 });
 
         this.animate();
+    }
+
+    loadingFacts(){
+        fetch('/assets/Information/facts.json') // Adjusted path
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const funFacts = data.facts;
+            const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
+            const funFactElement = document.getElementById('fun-fact');
+            if (funFactElement) {
+                funFactElement.textContent = randomFact;
+            }
+        })
+        .catch(error => console.error('Error loading fun facts:', error));
+    }
+    
+
+    loadingScreen(){
+        this.loadingFacts();
+    
+        const loadingScreen = document.getElementById('loading-screen');
+        setTimeout(() => {
+            loadingScreen.classList.add('fade-out'); // Add fade-out class
+            setTimeout(() => {
+                
+                loadingScreen.style.display = 'none'; 
+            }, 2000); 
+        }, 5000);        
+
     }
     //floating text
     addText(text, position) {

@@ -191,6 +191,14 @@ html, body {
   margin-top: 20px; /* Add spacing between circle and text */
 }
 
+#fun-fact{
+  user-select: none;
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+}
+
 /*%loading screen%*/
 
 #building-info {
