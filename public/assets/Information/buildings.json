@@ -1,9 +1,52 @@
 {
     "buildings": {
-        "CAA Building": {
-            "title": "CAA Building | College of Agriculture and Agri-Industries",
-            "description": "The CAA Building is the heart of agriculture education, where future leaders in agriculture will be trained to become key contributors to the Philippine economy. The college offers two primary programs:"
-        }
+    "CAA Building": {
+        "title": "CAA Building | College of Agriculture and Agri-Industries",
+        "description": "The CAA Building is the heart of agriculture education, where future leaders in agriculture will be trained to become key contributors to the Philippine economy. The college offers two primary programs. The college is dedicated to nurturing innovative farmers who will play a vital role in optimizing the use of the Philippines' agricultural resources.",
+        "offered_programs": [
+            {
+                "program": "Bachelor of Science in Agriculture",
+                "details": [
+                    "Specialization in Crop Science",
+                    "Specialization in Agricultural Economics",
+                    "Specialization in Agronomy",
+                    "Specialization in Soil Science",
+                    "Specialization in Agribusiness Management",
+                    "Specialization in Animal Science",
+                    "Specialization in Horticulture"
+                ]
+            },
+            "Bachelor of Science in Agricultural Technology"
+        ],
+        "contact_details": [
+            "caa@carsu.edu.ph",
+            "@csucaaofficial"
+        ],
+        "opening_hours": "8 AM to 5 PM",
+        "wifi": "Available",
+        "nearby_locations": "CAA Cafeteria, Main Gate, IWAG Bldg."
+    }
+}
+
         
+        "CED Building": {
+            "title": "IWAG Building| College of Education",
+            "description": "The home of future educators, the torchbearers of the country's hope. As its name suggests, "Iwag" means light, symbolizing the role of educators in guiding and nurturing the future. Without teachers, there can be no future, as they shape and empower the next generation. They are our guiding grace.", 
+            "offered_programs": [
+                "Bachelor of Elementary Education",
+                "Bachelor of Secondary Education",
+                 "details": [
+                    "Major in Filipino",
+                    "Major in English",
+                    "Major in Science",
+                    "Major in Mathematics"
+            ],
+           "contact_details": [
+            "caa@carsu.edu.ph",
+            "@csucaaofficial"
+            ],
+            "opening_hours": "8 AM to 5 PM",
+            "wifi": "Available",
+            "nearby_locations": "CED Cafeteria, Main Gate, CAA Bldg."   
     }
 }
