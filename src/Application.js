@@ -38,7 +38,6 @@ export class Application {
     }
 
     //param(model,scale,rotate) for models
-    
     init() {
         //loading screen
         const loadingScreen = document.getElementById('loading-screen');
@@ -46,8 +45,8 @@ export class Application {
             loadingScreen.classList.add('fade-out'); // Add fade-out class
             setTimeout(() => {
                 
-                loadingScreen.style.display = 'none'; // Hide the loading screen after animation
-            }, 2000); // Match the animation duration in CSS
+                loadingScreen.style.display = 'none'; 
+            }, 2000); 
         }, 5000);        
 
         this.fontLoader.load('/assets/font/Roboto Condensed_Regular.json');
@@ -86,7 +85,7 @@ export class Application {
 
         this.animate();
     }
-
+    //floating text
     addText(text, position) {
         this.fontLoader.load('assets/font/Roboto Condensed_Regular.json', (font) =>{
             const textGeometry = new TextGeometry(text, {
@@ -105,6 +104,7 @@ export class Application {
             this.textMeshes.push(textMesh);
         });
     }
+    //interactables
     addEventListers(){
         window.addEventListener('mousemove',event => this.onMouseMove(event));
         window.addEventListener('click', (event) => this.onMouseClick(event));
