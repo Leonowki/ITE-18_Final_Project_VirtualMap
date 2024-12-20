@@ -54,6 +54,81 @@
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Available",
             "nearby_locations": "CED Cafeteria, Main Gate, CAA Bldg."
-        }
-    }
+        },
+    "Name of Building":{
+        "title": " ",
+        "description": " ",
+        "offered_programs": [
+            "details": [
+                
+            ]
+        ],
+        "contact_details": [
+            
+        ],
+        "opening_hours": " ",
+        "Wifi": " ",
+        "nearby_locations": " "
+    },
+        "Name of Building":{
+        "title": " ",
+        "description": " ",
+        "offered_programs": [
+            "details": [
+                
+            ]
+        ],
+        "contact_details": [
+            
+        ],
+        "opening_hours": " ",
+        "Wifi": " ",
+        "nearby_locations": " "
+    },
+        "Name of Building":{
+        "title": " ",
+        "description": " ",
+        "offered_programs": [
+            "details": [
+                
+            ]
+        ],
+        "contact_details": [
+            
+        ],
+        "opening_hours": " ",
+        "Wifi": " ",
+        "nearby_locations": " "
+    },
+        "Name of Building":{
+        "title": " ",
+        "description": " ",
+        "offered_programs": [
+            "details": [
+                
+            ]
+        ],
+        "contact_details": [
+            
+        ],
+        "opening_hours": " ",
+        "Wifi": " ",
+        "nearby_locations": " "
+    },
+        "Name of Building":{
+        "title": " ",
+        "description": " ",
+        "offered_programs": [
+            "details": [
+                
+            ]
+        ],
+        "contact_details": [
+            
+        ],
+        "opening_hours": " ",
+        "Wifi": " ",
+        "nearby_locations": " "
+    },
+        
 }
