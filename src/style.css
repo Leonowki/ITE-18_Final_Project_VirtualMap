@@ -233,6 +233,19 @@ html, body {
   transform: translateX(0);
 }
 
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 canvas {
   display: block; 
 }

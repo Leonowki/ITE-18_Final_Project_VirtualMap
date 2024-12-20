@@ -191,7 +191,15 @@ export class Application {
                         infoPanel.classList.remove('hidden');
                         infoPanel.style.display = 'block'; 
                     } else {
-                        console.warn(`No data found for ${buildingName}`);
+                        const infoPanel = document.getElementById('building-info');
+                        const title = document.getElementById('building-title');
+                        const description = document.getElementById('building-description');
+                    
+                        title.textContent = "Building Not Found";
+                        description.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel enim at arcu varius vulputate. Nulla facilisi.";
+                    
+                        infoPanel.classList.remove('hidden');
+                        infoPanel.style.display = 'block';
                     }
                 })
                 .catch(error => console.error('Error fetching building data:',error));
@@ -199,20 +207,20 @@ export class Application {
     }
 
     buildingImage(buildingName) {
+        console.log(buildingName);
         const imageGrid = document.getElementById('image-grid');
-        imageGrid.innerHTML = ''; 
+        imageGrid.className = 'image-grid'; // Ensure the grid styling is applied
+        imageGrid.innerHTML = ''; // Clear previous images
     
-        
-        const imageFolder = `/assets/images/${buildingName}/`;
+        const imageFolder = `./assets/images/${buildingName}`;
         const imageExtensions = ['0.webp', '1.webp', '2.webp', '3.webp'];
     
-        
         imageExtensions.forEach((imageFile) => {
             const imgElement = document.createElement('img');
-            imgElement.src = `${imageFolder}${imageFile}`;
+            imgElement.src = `${imageFolder}/${imageFile}`;
             imgElement.alt = `${buildingName} Image`;
             imgElement.onerror = () => {
-                console.warn(`Image not found: ${imageFolder}${imageFile}`);
+                console.warn(`Image not found: ${imageFolder}/${imageFile}`);
             };
             imageGrid.appendChild(imgElement);
         });
