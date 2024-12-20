@@ -148,7 +148,7 @@ export class Application {
 
         
         this.textMeshes.forEach((mesh) => {
-            mesh.material.color.set(0xffffff); // Default color
+            mesh.material.color.set(0xF3F3F3); // Default color
         });
 
         if (intersects.length > 0) {

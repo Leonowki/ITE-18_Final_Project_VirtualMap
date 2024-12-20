@@ -133,7 +133,6 @@ export class SceneSetup {
         
     }
     
-
     render() {
         this.cameraRange();
         this.renderer.render(this.scene, this.camera);
