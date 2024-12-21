@@ -191,15 +191,7 @@ export class Application {
                         infoPanel.classList.remove('hidden');
                         infoPanel.style.display = 'block'; 
                     } else {
-                        const infoPanel = document.getElementById('building-info');
-                        const title = document.getElementById('building-title');
-                        const description = document.getElementById('building-description');
-                    
-                        title.textContent = "Building Not Found";
-                        description.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel enim at arcu varius vulputate. Nulla facilisi.";
-                    
-                        infoPanel.classList.remove('hidden');
-                        infoPanel.style.display = 'block';
+                        console.log("info hasn't been filed yet in json file");
                     }
                 })
                 .catch(error => console.error('Error fetching building data:',error));

@@ -55,200 +55,122 @@
             "wifi": "Available",
             "nearby_locations": "CED Cafeteria, Main Gate, CAA Bldg."
         },
-        "Villares Building":{
-            "title": " ",
-            "description": " ",
-            "offered_programs": [
-                "details": [
-                    
-                ]
-            ],
-            "contact_details": [
-                
-            ],
-            "opening_hours": " ",
-            "Wifi": " ",
-            "nearby_locations": " "
+        "Villares Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
         },
-        "Back Admin Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "CSU Oval":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "HINANG Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "HIRAYA Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "Hostel Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "Kinaadman Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "Library Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "MASAWA Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "New Admin Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "Batok Hall":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "Old Admin Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    },
-        "Old CAS Building":{
-        "title": " ",
-        "description": " ",
-        "offered_programs": [
-            "details": [
-                
-            ]
-        ],
-        "contact_details": [
-            
-        ],
-        "opening_hours": " ",
-        "Wifi": " ",
-        "nearby_locations": " "
-    }       
-}
+        "Back Admin Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "CSU Oval": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "HINANG Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "HIRAYA Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "Hostel Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "Kinaadman Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "Library Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "MASAWA Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "New Admin Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "Batok Hall": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "Old Admin Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        },
+        "Old CAS Building": {
+            "title": "",
+            "description": "",
+            "offered_programs": [],
+            "contact_details": [],
+            "opening_hours": "",
+            "wifi": "",
+            "nearby_locations": ""
+        }
+    }
 }
