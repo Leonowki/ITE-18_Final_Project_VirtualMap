@@ -3,6 +3,7 @@ import { ModelLoader } from './ModelLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { MeshBasicMaterial, Mesh,Raycaster,Vector2} from 'three';
+import TWEEN from '@tweenjs/tween.js';
 import { element } from 'three/src/nodes/TSL.js';
 
 export class Application {
@@ -41,6 +42,7 @@ export class Application {
         this.buildingImage();//images in infor
         this.miscellaneous();
         this.programsInBuilding();
+        this.panToModel();
     }
 
     //param(model,scale,rotate) for models
@@ -240,7 +242,7 @@ export class Application {
                 .then(response => response.json())
                 .then(data => {
                     const buildingData = data.buildings[buildingName];
-    
+                    this.panToModel(buildingData,buildingName);
                     if (buildingData) {
                         // Populate info panel
                         const infoPanel = document.getElementById('building-info');
@@ -267,7 +269,43 @@ export class Application {
                 .catch(error => console.error('Error fetching building data:', error));
         }
     }
+    //needs debugging
+    panToModel(buildingData, buildingName) {
+        // Extract camera position and rotation from buildingData
+        const targetData = buildingData[buildingName];
+        if (!targetData) {
+            console.error("No target data found for building:", buildingName);
+            return;
+        }
     
+        const targetPosition = new THREE.Vector3(
+            targetData.coordinate.x,
+            targetData.coordinate.y,
+            targetData.coordinate.z
+        );
+    
+        const targetRotation = new THREE.Euler(
+            targetData.rotation.x,
+            targetData.rotation.y,
+            targetData.rotation.z
+        );
+    
+        
+        // Animate position
+        new TWEEN.Tween(this.sceneSetup.camera.position)
+            .to({ x: targetPosition.x, y: targetPosition.y, z: targetPosition.z }, 2000) // 2 seconds for transition
+            .easing(TWEEN.Easing.Quadratic.InOut)
+            .start();
+    
+        
+        new TWEEN.Tween(this.sceneSetup.camera.rotation)
+            .to({ x: targetRotation.x, y: targetRotation.y, z: targetRotation.z }, 2000)
+            .easing(TWEEN.Easing.Quadratic.InOut)
+            .start();
+    
+        // Optionally, focus the camera on the target model
+        this.focusOnBuilding(targetPosition);
+    }
 
     buildingImage(buildingName) {
         console.log(buildingName);

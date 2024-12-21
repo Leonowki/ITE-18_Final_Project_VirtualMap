@@ -27,7 +27,21 @@
             ],
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Available",
-            "nearby_locations": "CAA Cafeteria, Main Gate, IWAG Bldg."
+            "nearby_locations": "CAA Cafeteria, Main Gate, IWAG Bldg.",
+            "coordinate":{
+                "x":-205,
+                "y": 4,
+                "z": 50
+
+            },
+            "rotation":{
+                "x":-2,
+                "y": -1,
+                "z": -2
+
+            }
+
+            
         },
         "Iwag Building": {
             "title": "IWAG Building | College of Education",
@@ -53,7 +67,17 @@
             ],
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Available",
-            "nearby_locations": "CED Cafeteria, Main Gate, CAA Bldg."
+            "nearby_locations": "CED Cafeteria, Main Gate, CAA Bldg.",
+            "coordinate": {
+                "x": -214.4923919032768,
+                "y": 3.4190539573132432,
+                "z": -42.752031999865444
+            },
+            "rotation": {
+                "x": -2.9638389505579967,
+                "y": -1.362103005642481,
+                "z": -2.967617583130737
+            }
         },
         "Villares Building": {
             "title": "Villares Building | College of Forestry and Environmental Sciences",
@@ -68,14 +92,39 @@
             ],
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Available",
-            "nearby_locations": "DOST Bldg"
+            "nearby_locations": "DOST Bldg",
+
+            "coordinate":{
+                "x":177,
+                "y": 7,
+                "z": -1
+
+            },
+            "rotation":{
+                "x":-2.9,
+                "y": -0.6,
+                "z": -3
+
+            }
         },
         "Back Admin Building": {
             "title": "Motorpool Building and Back Admin Building",
             "description": "This facility serves as a vital hub for university administrative operations and logistical support. The primary purpose of the building is to accommodate administrative staff and facilitate the processing of essential paperwork. \n In addition to its administrative functions, the Motorpool section of the building houses important university vehicles. These vehicles are frequently utilized by the Agriculture and Engineering departments for fieldwork and other specialized activities. \nAt the rear of the building, a few lecture rooms are situated, primarily dedicated to hosting classes for engineering subjects. These spaces provide an environment conducive to focused learning and technical discussions.",
             "opening_hours": "",
             "wifi": "",
-            "nearby_locations": ""
+            "nearby_locations": "",
+            "coordinate":{
+                "x":-20,
+                "y": 4.4,
+                "z": -60
+
+            },
+            "rotation":{
+                "x":0.6,
+                "y": 0.9,
+                "z": -0.04
+
+            }
         },
         "CSU's Oval": {
             "title": "CSU Oval",
@@ -84,7 +133,19 @@
             "contact_details": [],
             "opening_hours": "",
             "wifi": "",
-            "nearby_locations": ""
+            "nearby_locations": "",
+            "coordinate":{
+                "x":-82,
+                "y": 33.7,
+                "z": 28
+
+            },
+            "rotation":{
+                "x":-1.5,
+                "y": -0.95,
+                "z": -1.54
+
+            }
         },
         "Hinang Building": {
             "title": "HINANG Hall | College of Engineering and GeoSciences",
@@ -104,7 +165,19 @@
             ],
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Available",
-            "nearby_locations": "HIRAYA Bldg, MASAWA Bldg, Eco Hall, Eco Park"
+            "nearby_locations": "HIRAYA Bldg, MASAWA Bldg, Eco Hall, Eco Park",
+            "coordinate":{
+                "x":125,
+                "y": 4.7,
+                "z": -10
+
+            },
+            "rotation":{
+                "x":0.18,
+                "y": 0.84,
+                "z": -0.139
+
+            }
         },
         "Hiraya Building": {
             "title": "HIRAYA Hall | College of Computing and Information Sciences",
@@ -119,21 +192,57 @@
             ],
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Available",
-            "nearby_locations": "HINANG Hall, MASAWA Bldg, Eco Hall, Eco Park"
+            "nearby_locations": "HINANG Hall, MASAWA Bldg, Eco Hall, Eco Park",
+            "coordinate":{
+                "x":53,
+                "y": 4,
+                "z": -9.5
+
+            },
+            "rotation":{
+                "x":0.2,
+                "y": -0.58,
+                "z": 0.1516
+
+            }
         },
         "Hostel Building": {
             "title": "Hostel Building",
             "description": "The Hostel Building is a multi-functional facility that serves as an official lodging space for visitors, providing comfortable accommodations for guests of the university. Additionally, the building houses the university's Clinic, ensuring accessible healthcare services, and the offices for the Physical Education Department, supporting students' health and fitness programs. Outside the Hostel Building, the grounds come alive with activity as Sepak Takraw and Volleyball players practice and play, fostering a vibrant and active campus environment.",
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Not Available",
-            "nearby_locations": "BATOK Hall, IWAG Hall, H.E.R.O Learning Commons"
+            "nearby_locations": "BATOK Hall, IWAG Hall, H.E.R.O Learning Commons",
+            "coordinate":{
+                "x":-109,
+                "y": 3.5,
+                "z": -70.04
+
+            },
+            "rotation":{
+                "x":-0.04,
+                "y": -0.55,
+                "z": 0.025
+
+            }
         },
         "Kinaadman Building": {
             "title": "Kinaadman Building",
             "description": "Kinaadman Building derives its name from the word 'kinaadman,' meaning knowledge and wisdom. This building embodies the pursuit of intellectual growth and enlightenment. It serves as a hub for students engaging in the study of humanities and mathematics, fostering an environment of critical thinking and learning.The first floor houses the Mathematics Department's offices and lecture rooms dedicated to mathematics courses. The second floor is home to the Psychology Department's offices and lecture rooms for humanities subjects, providing a space for students to explore the depth of human understanding and interdisciplinary connections.",
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Not Available",
-            "nearby_locations": "HIRAYA Bldg, MASAWA Bldg, Eco Hall, Eco Park, Old and New Admin Building"
+            "nearby_locations": "HIRAYA Bldg, MASAWA Bldg, Eco Hall, Eco Park, Old and New Admin Building",
+            "coordinate":{
+                "x":40,
+                "y": 3,
+                "z": 3.2
+
+            },
+            "rotation":{
+                "x":0.27,
+                "y": 0.55,
+                "z": -0.14
+
+            }
         },
         "Library Building": {
             "title": "H.E.R.O Learning Commons | CSU Library Building",
@@ -143,21 +252,57 @@
             ],
             "opening_hours": "8 AM to 8 PM",
             "wifi": "Available",
-            "nearby_locations": "BATOK Hall, IWAG Hall, CAA Building, CSU Oval"
+            "nearby_locations": "BATOK Hall, IWAG Hall, CAA Building, CSU Oval",
+            "coordinate":{
+                "x":-66.87,
+                "y": 6.32,
+                "z": -10.5
+
+            },
+            "rotation":{
+                "x":2.8,
+                "y": 0.76,
+                "z": -2.93
+
+            }
         },
         "Masawa Building": {
             "title": "MASAWA Hall",
             "description": "MASAWA Hall derives its name from the historic island and boat, symbolizing the 'bright light of Butuan.' True to its name, this building represents hope and enlightenment, paving the way for academic excellence and future advancements. Originally designed to house the College of Medicine—an ambitious and visionary project still in the planning stages—MASAWA Hall now serves a dual purpose. \nWhile awaiting the full implementation of the medical program, the hall temporarily functions as a vital academic space, providing lecture rooms for engineering students and humanities subjects. Its bright, modern architecture stands as a testament to CSU's commitment to growth and its dedication to preparing for future milestones in education and innovation.",
             "opening_hours": "24 Hours",
             "wifi": "Available",
-            "nearby_locations": "HIRAYA Hall, HINANG Hall, Kinaadman Hall"
+            "nearby_locations": "HIRAYA Hall, HINANG Hall, Kinaadman Hall",
+            "coordinate":{
+                "x":87,
+                "y": 4.82,
+                "z": -70.7
+
+            },
+            "rotation":{
+                "x":0.007,
+                "y": 1.022,
+                "z": -0.006
+
+            }
         },
         "New Admin Building": {
             "title": "New Admin Building",
             "description": "The New Admin Building serves as the central hub for the university's administrative operations. Designed to accommodate the growing needs of the institution, it houses the offices of key university officials and administrative staff. With its modern facilities and strategic design, the building supports efficient governance and provides a welcoming space for students, faculty, and visitors seeking administrative services.",
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Available",
-            "nearby_locations": "Old Admin Building, BATOK Hall, H.E.R.O. Learning Commons, Hostel Building, Back Admin Building"
+            "nearby_locations": "Old Admin Building, BATOK Hall, H.E.R.O. Learning Commons, Hostel Building, Back Admin Building",
+            "coordinate":{
+                "x":-49.9,
+                "y": 5.2,
+                "z": -3.30
+
+            },
+            "rotation":{
+                "x":0.04,
+                "y": 0.0002,
+                "z":-0.000010479
+
+            }
         },
         "Batok Building": {
             "title": "Batok Hall | College of Mathematics and Natural Sciences",
@@ -174,14 +319,40 @@
             ],
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Available",
-            "nearby_locations": "H.E.R.O. Learning Commons, New Admin Building, IWAG Hall, Hostel Building"
+            "nearby_locations": "H.E.R.O. Learning Commons, New Admin Building, IWAG Hall, Hostel Building",
+            "coordinate":{
+                "x":-108.99,
+                "y": 3.85,
+                "z": 8.71
+
+            },
+            "rotation":{
+                "x":0.069,
+                "y": 3.8591308976335976,
+                "z":8.710215220094021
+
+            }
         },
         "Old Admin Building": {
             "title": "Old Admin Building",
             "description": "The Old Admin Building once served as the central hub for the University's administration. Today, it has been repurposed to support student services and organizations. It now houses the University Student Government, the League of Community Organizations (LCO), and the Guidance Office. This transformation has turned the building into an administrative center for student governance and engagement, fostering leadership, collaboration, and support for the university's vibrant student body.",
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Not Available",
-            "nearby_locations": "Kinaadman Building, New Admin Building, Old CAS Building"
+            "nearby_locations": "Kinaadman Building, New Admin Building, Old CAS Building",
+            "coordinate":{
+                "x":-45.10751376055103,
+                "y":  3.6211130219945087,
+                "z": -8.512644396146559
+
+
+            },
+            "rotation":{
+                "x":-0.31523939190466077,
+                "y": -0.953836712338001,
+                "z": -0.2599726521565272
+
+            }
+        }
         },
         "Old CAS Building": {
             "title": "Old CAS Building | College of Humanities and Social Sciences",
@@ -198,7 +369,21 @@
             ],
             "opening_hours": "8 AM to 5 PM",
             "wifi": "Not Available",
-            "nearby_locations": "HIRAYA Hall, HINANG Hall, Kinaadman Hall, Old Admin Building, Eco Park, Eco Hall"
+            "nearby_locations": "HIRAYA Hall, HINANG Hall, Kinaadman Hall, Old Admin Building, Eco Park, Eco Hall",
+            "coordinate":{
+                "x":17.448680253068957,
+                "y":4.363716196499999,
+                "z":55.99420286998722
+
+
+            },
+            "rotation":{
+                "x":-0.2064644435267027,
+                "y":-0.8328014459035297,
+                "z":-0.15373176757449455
+
+
+            }
         }
-    }
 }
+
