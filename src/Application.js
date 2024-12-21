@@ -3,6 +3,7 @@ import { ModelLoader } from './ModelLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { MeshBasicMaterial, Mesh,Raycaster,Vector2} from 'three';
+import { element } from 'three/src/nodes/TSL.js';
 
 export class Application {
     constructor() {
@@ -11,7 +12,7 @@ export class Application {
         //scene
         this.sceneSetup = new SceneSetup();
         //models
-        this.heroBuilding = new ModelLoader(this.sceneSetup.scene);
+        this.newBuilding = new ModelLoader(this.sceneSetup.scene);
         this.kinaadmanBuilding = new ModelLoader(this.sceneSetup.scene);
         this.libraryBuilding = new ModelLoader(this.sceneSetup.scene);
         this.csuOval = new ModelLoader(this.sceneSetup.scene);
@@ -28,14 +29,18 @@ export class Application {
         this.hostelBuilding = new ModelLoader(this.sceneSetup.scene);
         this.masawaBuilding = new ModelLoader(this.sceneSetup.scene);
         this.villaresBuilding = new ModelLoader(this.sceneSetup.scene);
-        this.loadingScreen();//handles fade out
-        this.buildingImage();//images in infor
+        
         //text interactable
         this.textMeshes = [];
         this.raycaster = new Raycaster();
         this.mouse = new Vector2();
         this.init();
         this.addEventListers();
+
+        this.loadingScreen();//handles fade out
+        this.buildingImage();//images in infor
+        this.miscellaneous();
+        this.programsInBuilding();
     }
 
     //param(model,scale,rotate) for models
@@ -44,8 +49,8 @@ export class Application {
         
         this.fontLoader.load('/assets/font/Roboto Condensed_Regular.json');
         //models
-        this.heroBuilding.loadModel('/assets/3d_models/new_admin_building.glb', { x: -50, y: -0.7, z: -45 },{ x: 0.45, y: 0.45, z: 0.45},{ x: 0, y: Math.PI/(-2), z: 0 });
-        this.addText("Hero Building",{ x: -57, y: 10, z: -45 },{ x: Math.PI/-2.8, y: 0, z: 0 });
+        this.newBuilding.loadModel('/assets/3d_models/new_admin_building.glb', { x: -50, y: -0.7, z: -45 },{ x: 0.45, y: 0.45, z: 0.45},{ x: 0, y: Math.PI/(-2), z: 0 });
+        this.addText("New Admin Building",{ x: -57, y: 10, z: -45 },{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.kinaadmanBuilding.loadModel('/assets/3d_models/kinaadman_building.glb',{ x: 23, y: -1, z: -50},{ x: 0.45, y: 0.45, z: 0.45 },{ x: 0, y: Math.PI/(-2), z: 0 });
         this.addText("Kinaadman Building",{ x: 13, y: 10, z: -50},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.libraryBuilding.loadModel('/assets/3d_models/library_building.glb',{ x: -100, y: -0.4, z: 25 },{ x: 0.15, y: 0.15, z: 0.15 },{ x: 0, y: Math.PI/4, z: 0 });
@@ -59,7 +64,7 @@ export class Application {
         this.backAdminBuilding.loadModel('assets/3d_models/back_admin_building.glb',{ x: -57, y: 0, z: -78 },{ x: 0.35, y: 0.35, z:0.35},{ x: 0, y:Math.PI/(-2), z: 0 });
         this.addText("Back Admin Building",{ x: -70, y: 10, z: -78 },{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.oldCasBuilding.loadModel('assets/3d_models/old_cas_building.glb',{ x: 40, y: -1, z:32 },{ x: 0.63, y: 0.63, z:0.63},{ x: 0, y:Math.PI, z:0 });
-        this.addText("Old Cas Building",{ x: 40, y: 10, z:32 },{ x: Math.PI/-2.8, y: 0, z: 0 });
+        this.addText("Old CAS Building",{ x: 40, y: 10, z:32 },{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.hirayaBuilding.loadModel('/assets/3d_models/hiraya_building.glb',{ x: 65, y: -1, z: -27},{ x: 0.6, y: 0.44, z: 0.44},{ x: 0, y: Math.PI/-2, z: 0});
         this.addText("Hiraya Building",{ x: 63, y: 15, z: -32},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.nsbBuilding.loadModel('/assets/3d_models/nsb_building.glb',{ x: -100, y: -0.5, z: -12},{ x: 0.65, y: 0.65, z: 0.65},{ x: 0, y: Math.PI/-2, z: 0});
@@ -158,45 +163,111 @@ export class Application {
             intersects[0].object.material.color.set(0x127300); // Hover color
         }
     }
+    miscellaneous(buildingData){
+        const openingHours =  document.getElementById('opening-hours');
+        const wifiAvailability = document.getElementById('wifi');
+        const nearbyLoc = document.getElementById('nearby-locations');
+
+       // Check for the correct property names from the JSON
+        if (buildingData.opening_hours) {
+            openingHours.textContent = "Opening hours: " + buildingData.opening_hours;
+        }
+
+        if (buildingData.wifi) {
+            wifiAvailability.textContent = "Wifi: " + buildingData.wifi;
+        }
+
+        if (buildingData.nearby_locations) {
+            nearbyLoc.textContent = "Nearby Locations: " + buildingData.nearby_locations;
+        }
+    }
+
+    programsInBuilding(buildingData) {
+        const programsHeader = document.getElementById('building-programs');
+        const programsList = document.getElementById('building-programs-list');
+        
+        // Clear existing content
+        programsList.innerHTML = '';
+        
+        if (buildingData.offered_programs && buildingData.offered_programs.length > 0) {
+            programsHeader.textContent = "Programs Offered:"; // Show header only if programs exist
+            
+            buildingData.offered_programs.forEach(program => {
+                const listItem = document.createElement('li');
+                
+                if (typeof program === "string") {
+                    // If program is a simple string
+                    listItem.textContent = program;
+                } else if (typeof program === "object" && program.program) {
+                    // If program is an object with details
+                    listItem.textContent = program.program;
+    
+                    if (program.details && program.details.length > 0) {
+                        const subList = document.createElement('ul');
+                        program.details.forEach(detail => {
+                            const subItem = document.createElement('li');
+                            subItem.textContent = detail;
+                            subList.appendChild(subItem);
+                        });
+                        listItem.appendChild(subList);
+                    }
+                }
+    
+                programsList.appendChild(listItem);
+            });
+        } else {
+            // Hide or clear header if no programs are available
+            programsHeader.textContent = '';
+        }
+    }
 
     onMouseClick(event) {
-        
+        // Update mouse coordinates
         this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     
-        
+        // Use raycaster to detect clicks
         this.raycaster.setFromCamera(this.mouse, this.sceneSetup.camera);
         const intersects = this.raycaster.intersectObjects(this.textMeshes);
     
         if (intersects.length > 0) {
             const clickedMesh = intersects[0].object;
             const buildingName = clickedMesh.name; 
-    
+            //2x2 images
             this.buildingImage(buildingName);
+            // Fetch JSON and populate UI
             fetch('/assets/Information/buildings.json')
                 .then(response => response.json())
                 .then(data => {
-                    // Check if the building exists in the JSON
                     const buildingData = data.buildings[buildingName];
+    
                     if (buildingData) {
-                        
+                        // Populate info panel
                         const infoPanel = document.getElementById('building-info');
-                        const title = document.getElementById('building-title');
-                        const description = document.getElementById('building-description');
+                        document.getElementById('building-title').textContent = buildingData.title || "No Title Available";
+                        document.getElementById('building-description').textContent = buildingData.description || "No Description Available";
     
-                        title.textContent = buildingData.title;
-                        description.textContent = buildingData.description;
-    
+                        // Populate contact details
+                        const contactDetails = buildingData.contact_details || [];
+                        document.getElementById('building-contact-details').textContent = contactDetails.length
+                            ? contactDetails.join(", ")
+                            : "No contact details available.";
                         
+                        this.programsInBuilding(buildingData);
+                        //miscel    
+                        this.miscellaneous(buildingData);
+    
+                        // Show the panel
                         infoPanel.classList.remove('hidden');
-                        infoPanel.style.display = 'block'; 
+                        infoPanel.style.display = 'block';
                     } else {
-                        console.log("info hasn't been filed yet in json file");
+                        console.log("No data found for building:", buildingName);
                     }
                 })
-                .catch(error => console.error('Error fetching building data:',error));
+                .catch(error => console.error('Error fetching building data:', error));
         }
     }
+    
 
     buildingImage(buildingName) {
         console.log(buildingName);

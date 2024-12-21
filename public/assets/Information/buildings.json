@@ -29,7 +29,7 @@
             "wifi": "Available",
             "nearby_locations": "CAA Cafeteria, Main Gate, IWAG Bldg."
         },
-        "CED Building": {
+        "Iwag Building": {
             "title": "IWAG Building | College of Education",
             "description": "The home of future educators, the torchbearers of the country's hope. As its name suggests, 'Iwag' means light, symbolizing the role of educators in guiding and nurturing the future. Without teachers, there can be no future, as they shape and empower the next generation. They are our guiding grace.",
             "offered_programs": [
@@ -77,7 +77,7 @@
             "wifi": "",
             "nearby_locations": ""
         },
-        "CSU Oval": {
+        "CSU's Oval": {
             "title": "CSU Oval",
             "description": "The CSU Oval is a vast, open field that serves as the heart of outdoor activities and events on campus. Primarily used for field sports, it is a hub for athletic training and competitions. Beyond sports, the oval transforms into a vibrant venue for major university events, including the League of Campus Organizations (LCO) gatherings and the prestigious SANGKA, a highlight of CSU’s annual celebrations. With its spacious layout and dynamic usage, the CSU Oval is a central space for fostering camaraderie, showcasing talent, and celebrating the university’s traditions.",
             "offered_programs": [],
@@ -86,7 +86,7 @@
             "wifi": "",
             "nearby_locations": ""
         },
-        "HINANG Building": {
+        "Hinang Building": {
             "title": "HINANG Hall | College of Engineering and GeoSciences",
             "description": "HINANG Hall is the foundation for the future engineers of Caraga and the nation. Derived from the word 'hinang,' which means 'to make' or 'to do,' the name reflects the spirit of creation, innovation, and action. This building proudly houses the College of Engineering and GeoSciences, nurturing the future builders, problem-solvers, and visionaries of the country. With its vibrant community and a strong population of engineering students, HINANG Hall is known as the 'Home of Champions' for its tradition of excellence. It serves as a ground for honing skills, fostering innovation, and shaping the leaders who will build a better tomorrow.",
             "offered_programs": [
@@ -106,7 +106,7 @@
             "wifi": "Available",
             "nearby_locations": "HIRAYA Bldg, MASAWA Bldg, Eco Hall, Eco Park"
         },
-        "HIRAYA Building": {
+        "Hiraya Building": {
             "title": "HIRAYA Hall | College of Computing and Information Sciences",
             "description": "HIRAYA Hall embodies the meaning of 'the fruit of one's hope, dreams, and inspiration.' As a testament to Caraga State University's commitment to digital innovation and technological advancement, this building serves as the home of the College of Computing and Information Sciences (CCIS). The college is dedicated to nurturing the future workforce of the tech industry, equipping students with the skills and knowledge needed to shape the rapidly evolving ICT era. HIRAYA Hall stands as a beacon of progress, innovation, and the fulfillment of aspirations in the digital age.",
             "offered_programs": [
@@ -145,7 +145,7 @@
             "wifi": "Available",
             "nearby_locations": "BATOK Hall, IWAG Hall, CAA Building, CSU Oval"
         },
-        "MASAWA Building": {
+        "Masawa Building": {
             "title": "MASAWA Hall",
             "description": "MASAWA Hall derives its name from the historic island and boat, symbolizing the 'bright light of Butuan.' True to its name, this building represents hope and enlightenment, paving the way for academic excellence and future advancements. Originally designed to house the College of Medicine—an ambitious and visionary project still in the planning stages—MASAWA Hall now serves a dual purpose. \nWhile awaiting the full implementation of the medical program, the hall temporarily functions as a vital academic space, providing lecture rooms for engineering students and humanities subjects. Its bright, modern architecture stands as a testament to CSU's commitment to growth and its dedication to preparing for future milestones in education and innovation.",
             "opening_hours": "24 Hours",
@@ -159,7 +159,7 @@
             "wifi": "Available",
             "nearby_locations": "Old Admin Building, BATOK Hall, H.E.R.O. Learning Commons, Hostel Building, Back Admin Building"
         },
-        "Batok Hall": {
+        "Batok Building": {
             "title": "Batok Hall | College of Mathematics and Natural Sciences",
             "description": "The Batok Hall stands as a pillar of resilience and innovation, housing the Mathematics and Natural Sciences. Much like its name, which symbolizes the back of the neck, the building represents the strength and support that mathematical and scientific disciplines provide to the academic and research community. Equipped with state-of-the-art laboratories and collaborative learning spaces, Batok Building is a hub for discovery, analysis, and the pursuit of knowledge that sustains the CARAGA region and beyond.",
             "offered_programs": [

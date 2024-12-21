@@ -4,9 +4,7 @@
         "Caraga State University is 232 Hectares wide!",
         "Caraga State University was Northern Mindanao Agricultural College (NORMINAC) back in the day!",
         "CSU has 7 Colleges within the University!",
-        "The statue on the front of the CSU's library is the First Congresswoman of the Philippines, Honorable Elisa Rosales Ochoa!"
-    ],
-    "passing rate facts": [
+        "The statue on the front of the CSU's library is the First Congresswoman of the Philippines, Honorable Elisa Rosales Ochoa!",
         "100% passing rate for Electronics Engineer and Electronics Technician Board Exam",
         "99.02% passing rate for Social Work Licensure Examination",
         "98.84% passing rate for Bachelor of Elementary Education",
@@ -22,6 +20,9 @@
         "57.30% passing rate for Agricultural and Biosystems Engineering Licensure Examination",
         "40.00% passing rate for Chemist Licensure Examination"
     ]
+    
+        
+    
 
 
 }

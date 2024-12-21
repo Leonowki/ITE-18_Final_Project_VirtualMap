@@ -46,12 +46,18 @@
             </div>
         </div>
         <!---hidden info-->
-            <div id="building-info" class="hidden">
-                <button id="close-info" style="float: right;">x</button>
-                <h2 id="building-title">Building Name here</h2>
-                <div id="image-grid"></div>
-                <p id="building-description">Details here</p>
-            </div>
+        <div id="building-info" class="hidden" style="display: none;">
+            <button id="close-info" style="float: right;" onclick="hideBuildingInfo()">x</button>
+            <h2 id="building-title">Building Name here</h2>
+            <div id="image-grid">Images here</div>
+            <p id="building-description">Details here</p>
+            <p id="building-contact">Contact Details: <span id="building-contact-details"></span></p>
+            <p id="building-programs"> <br> <ul id="building-programs-list"></ul></p>
+            <p id="opening-hours"></p>
+            <p id="wifi"></p>
+            <p id="nearby-locations"></p>
+
+        </div>
         <!-- WebGL and Three.js Scripts -->
         <script type="importmap">
         {
