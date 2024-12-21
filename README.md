@@ -37,7 +37,7 @@ cd ITE-18-VirtualMap
 git lfs install
 
 -----------------
-
+npm install @tweenjs/tween.js
 npm install
 
 npm install --save three
