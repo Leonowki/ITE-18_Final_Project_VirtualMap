@@ -1,4 +1,5 @@
 import { SceneSetup } from './SceneSetup.js';
+import * as THREE from 'three';
 import { ModelLoader } from './ModelLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
@@ -43,6 +44,7 @@ export class Application {
         this.miscellaneous();
         this.programsInBuilding();
         this.panToModel();
+        this.targetFocus;
     }
 
     //param(model,scale,rotate) for models
@@ -76,7 +78,7 @@ export class Application {
         this.addText("Iwag Building",{ x: -180, y: 10, z: -40},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.hostelBuilding.loadModel('/assets/3d_models/hostel_building.glb',{ x: -135,y: 0, z: -95 } ,{ x: 1.4, y: 1.4, z: 1.4 });
         this.addText("Hostel Building",{ x: -135,y: 10, z: -95 },{ x: Math.PI/-2.8, y: 0, z: 0 });
-        this.caaBuilding.loadModel('/assets/3d_models/caa_building.glb',{ x: -180, y: 0, z: 60},{ x: -1.4, y: 1.4, z: 2 },{ x: 0, y: 0, z: 0});
+        this.caaBuilding.loadModel('/assets/3d_models/caa_building.glb',{ x: -180, y: 0, z: 60},{ x: -1.4, y: 1.4, z: -2 },{ x: 0, y: 0, z: 0});
         this.addText("CAA Building",{ x: -180, y: 10, z: 60},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.masawaBuilding.loadModel('/assets/3d_models/masawa_building.glb',{ x: 65, y: 0, z: -103}, {x: 1, y: 0.7, z: 0.7 },{ x: 0, y:Math.PI/-2, z: 0});
         this.addText("Masawa Building",{ x: 60, y: 12, z: -102},{ x: Math.PI/-2.8, y: 0, z: 0 });
@@ -157,12 +159,12 @@ export class Application {
 
         
         this.textMeshes.forEach((mesh) => {
-            mesh.material.color.set(0xF3F3F3); // Default color
+            mesh.material.color.set(0xE2DBD0); // Default color
         });
 
         if (intersects.length > 0) {
             
-            intersects[0].object.material.color.set(0x127300); // Hover color
+            intersects[0].object.material.color.set(0x103713); // Hover color
         }
     }
     miscellaneous(buildingData){
@@ -271,13 +273,14 @@ export class Application {
     }
     //needs debugging
     panToModel(buildingData, buildingName) {
-        // Extract camera position and rotation from buildingData
-        const targetData = buildingData[buildingName];
+        // Extract camera position and rotation directly from buildingData
+        const targetData = buildingData; // buildingData is already specific to the building
         if (!targetData) {
             console.error("No target data found for building:", buildingName);
             return;
         }
-    
+        
+        console.log("In pan");
         const targetPosition = new THREE.Vector3(
             targetData.coordinate.x,
             targetData.coordinate.y,
@@ -290,14 +293,13 @@ export class Application {
             targetData.rotation.z
         );
     
-        
         // Animate position
         new TWEEN.Tween(this.sceneSetup.camera.position)
             .to({ x: targetPosition.x, y: targetPosition.y, z: targetPosition.z }, 2000) // 2 seconds for transition
             .easing(TWEEN.Easing.Quadratic.InOut)
             .start();
     
-        
+        // Animate rotation
         new TWEEN.Tween(this.sceneSetup.camera.rotation)
             .to({ x: targetRotation.x, y: targetRotation.y, z: targetRotation.z }, 2000)
             .easing(TWEEN.Easing.Quadratic.InOut)
@@ -305,6 +307,10 @@ export class Application {
     
         // Optionally, focus the camera on the target model
         this.focusOnBuilding(targetPosition);
+    }
+    focusOnBuilding(targetPosition) {
+        // Store the target position for continuous updates in animate
+        this.targetFocus = new THREE.Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
     }
 
     buildingImage(buildingName) {
@@ -335,13 +341,18 @@ export class Application {
     animate() {
         requestAnimationFrame(() => this.animate());
     
+        // Update camera focus if target is set
+        if (this.targetFocus) {
+            this.sceneSetup.camera.lookAt(this.targetFocus.x, this.targetFocus.y, this.targetFocus.z);
+        }
+    
         // Make all text meshes face the camera
         this.textMeshes.forEach((textMesh) => {
             textMesh.lookAt(this.sceneSetup.camera.position);
         });
+    
         this.sceneSetup.controls.update();
         this.sceneSetup.render();   
-        
     }
 }
 
