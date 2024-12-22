@@ -32,6 +32,8 @@ export class Application {
         this.masawaBuilding = new ModelLoader(this.sceneSetup.scene);
         this.villaresBuilding = new ModelLoader(this.sceneSetup.scene);
         
+        this.preloadAllImages(); // Preload all images at the start
+
         //text interactable
         this.textMeshes = [];
         this.raycaster = new Raycaster();
@@ -45,6 +47,40 @@ export class Application {
         this.programsInBuilding();
         this.panToModel();
         this.targetFocus;
+    }
+
+    preloadImages(buildingName) {
+        const imageFolder = `./assets/images/${buildingName}`;
+        const imageExtensions = ['0.webp', '1.webp', '2.webp', '3.webp'];
+        
+        imageExtensions.forEach((imageFile) => {
+            const img = new Image();
+            img.src = `${imageFolder}/${imageFile}`;
+        });
+    }
+
+    preloadAllImages() {
+        const buildings = [
+            'New Admin Building',
+            'Kinaadman Building',
+            'Library Building',
+            'CSU Oval',
+            'Hinang Building',
+            'Old Admin Building',
+            'Back Admin Building',
+            'Old CAS Building',
+            'Hiraya Building',
+            'NSB Building',
+            'CED Building',
+            'CAA Building',
+            'Hostel Building',
+            'Masawa Building',
+            'Villares Building',
+        ];
+
+        buildings.forEach(building => {
+            this.preloadImages(building);
+        });
     }
 
     //param(model,scale,rotate) for models
@@ -313,8 +349,19 @@ export class Application {
         this.targetFocus = new THREE.Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
     }
 
+    preloadImages(buildingName) {
+        const imageFolder = `./assets/images/${buildingName}`;
+        const imageExtensions = ['0.webp', '1.webp', '2.webp', '3.webp'];
+        
+        imageExtensions.forEach((imageFile) => {
+            const img = new Image();
+            img.src = `${imageFolder}/${imageFile}`;
+        });
+    }
+
     buildingImage(buildingName) {
         console.log(buildingName);
+
         const imageGrid = document.getElementById('image-grid');
         imageGrid.className = 'image-grid'; // Ensure the grid styling is applied
         imageGrid.innerHTML = ''; // Clear previous images
@@ -329,6 +376,28 @@ export class Application {
             imgElement.onerror = () => {
                 console.warn(`Image not found: ${imageFolder}/${imageFile}`);
             };
+        
+        const modal = document.getElementById("zoomModal");
+        const zoomedImage = document.getElementById("zoomedImage");
+        const closeBtn = document.querySelector(".close");
+        // Add click event listener for zoom effect
+        imgElement.addEventListener('click', () => {
+            modal.style.display = "block";
+            zoomedImage.src = imgElement.src;
+        });
+
+        // Close modal when 'x' is clicked
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // Close modal when clicking outside of the image
+        window.onclick = function (event) {
+            if (event.target === modal) {
+            modal.style.display = "none";
+            }
+        };
+
             imageGrid.appendChild(imgElement);
         });
     }
