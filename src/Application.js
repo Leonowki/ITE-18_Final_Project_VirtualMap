@@ -103,7 +103,7 @@ export class Application {
         this.addText("Old Admin Building",{ x: -30, y: 10, z: -25},{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.backAdminBuilding.loadModel('./assets/3d_models/back_admin_building.glb',{ x: -57, y: 0, z: -78 },{ x: 0.35, y: 0.35, z:0.35},{ x: 0, y:Math.PI/(-2), z: 0 });
         this.addText("Back Admin Building",{ x: -70, y: 10, z: -78 },{ x: Math.PI/-2.8, y: 0, z: 0 });
-        this.oldCasBuilding.loadModel('./ssets/3d_models/old_cas_building.glb',{ x: 40, y: -1, z:32 },{ x: 0.63, y: 0.63, z:0.63},{ x: 0, y:Math.PI, z:0 });
+        this.oldCasBuilding.loadModel('./assets/3d_models/old_cas_building.glb',{ x: 40, y: -1, z:32 },{ x: 0.63, y: 0.63, z:0.63},{ x: 0, y:Math.PI, z:0 });
         this.addText("Old CAS Building",{ x: 40, y: 10, z:32 },{ x: Math.PI/-2.8, y: 0, z: 0 });
         this.hirayaBuilding.loadModel('./assets/3d_models/hiraya_building.glb',{ x: 65, y: -1, z: -27},{ x: 0.6, y: 0.44, z: 0.44},{ x: 0, y: Math.PI/-2, z: 0});
         this.addText("Hiraya Building",{ x: 63, y: 15, z: -32},{ x: Math.PI/-2.8, y: 0, z: 0 });
