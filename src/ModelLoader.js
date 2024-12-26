@@ -9,8 +9,8 @@ export class ModelLoader {
     loadModel(path, position = { x: 0, y: 0, z: 0 }, scale = { x: 1, y: 1, z: 1 }, rotate = { x: 0, y: 0, z: 0 }) {
         this.loader.load(
             path,
-            (gltf) => {
-                const model = gltf.scene;
+            (glb) => {
+                const model = glb.scene;
     
                 // Apply transformations to the root model
                 model.position.set(position.x, position.y, position.z);
