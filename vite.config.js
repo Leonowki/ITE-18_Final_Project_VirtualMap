@@ -10,5 +10,6 @@ export default defineConfig({
         virtualmap: './virtualmap.html', // Secondary page
       },
     },
+    assetsInclude: ["**/*.glb"],
   },
 });
