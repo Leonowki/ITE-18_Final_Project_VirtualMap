@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="src/styles.css" />
+        <title>VirtuCSU</title>
+    </head>
+    <body>
+        <!-- Text Information Overlay -->
+        <div id="info-overlay">
+            <div>
+                <h1>VirtuCSU</h1>
+            </div>
+            <!-- <p>Welcome to the interactive 2.5D map of CSU. Use your mouse to navigate and explore different college buildings. Click on buildings for more information!</p> -->
+        </div>
+        <!---loading screen-->
+        <div class="loading-wrapper" id="loading-screen">
+            <div class="loading-container">
+                <div class="circle">
+                    <div class="cut">
+                        <div class="circle-2"></div>
+                    </div>
+                </div>
+                <div class="loading-text">
+                    <h2>Loading Map..</h2>
+                </div>
+                <div id="fun-fact"></div>
+            </div>
+        </div>
+        <!---loading screen-->
+            
+        <div id="controls">
+            <div>
+                <p>Left click to move around</p>
+                <img src="/assets/icon/left-click.webp" alt="left-click">
+            </div>
+            <div>
+                <p> Right click and drag or <br> use scroll to zoom in/out</p>
+                <img src="/assets/icon/right-click.webp" alt="right-click">
+            </div>
+            <div>
+                <p> Click building names for more information</p>
+                <img src="/assets/icon/right-click-of-the-mouse.webp" alt="click-click">
+            </div>
+        </div>
+        <!---hidden info-->
+        <div id="building-info" class="hidden" style="display: none;">
+            <button id="close-info" style="float: right;" onclick="hideBuildingInfo()">&times;</button>
+            <h2 id="building-title">Building Name here</h2>
+            <div id="image-grid">Images here</div>
+            <p id="building-description">Details here</p>
+            <p id="building-contact">Contact Details: <span id="building-contact-details"></span></p>
+            <p id="building-programs"> <br> <ul id="building-programs-list"></ul></p>
+            <p id="opening-hours"></p>
+            <p id="wifi"></p>
+            <p id="nearby-locations"></p>
+
+        </div>
+
+        <!-- Modal for zoomed image -->
+        <div id="zoomModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="zoomedImage">
+        </div>
+        
+        <!-- WebGL and Three.js Scripts -->
+        <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/"
+            }
+        }
+        </script>
+        <script type="module" src="src/main.js" defer></script>
+
+
+    </body>
+</html>
